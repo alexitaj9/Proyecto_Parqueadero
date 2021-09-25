@@ -5,7 +5,7 @@ namespace Parqueadero.App.Dominio
     public class TipoVehiculo
     {
         //Propiedades de la clase
-        public int Id { get; set; }
-        public String Nombre { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
     }
 }

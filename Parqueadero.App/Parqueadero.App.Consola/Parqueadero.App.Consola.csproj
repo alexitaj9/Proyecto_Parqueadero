@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Parqueadero.App.Persistencia\Parqueadero.App.Persistencia.csproj" />
+    <ProjectReference Include="..\Parqueadero.App.Dominio\Parqueadero.App.Dominio.csproj" />
   </ItemGroup>
 
 </Project>

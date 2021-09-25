@@ -1,4 +1,5 @@
 ﻿using System;
+using Parqueadero.App.Persistencia;
 using Parqueadero.App.Dominio;
 
 namespace Parqueadero.App.Consola
@@ -7,7 +8,13 @@ namespace Parqueadero.App.Consola
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Empleado empleado1 = new Empleado() {
+                id = 1,
+                nombre = "Juan",
+                apellidos = "Vargas Morales"
+            };
+
+            Console.WriteLine("Empleado " + empleado1.id + ": " + empleado1.nombre + " " + empleado1.apellidos);
         }
     }
 }
