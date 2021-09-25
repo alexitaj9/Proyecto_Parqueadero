@@ -1,8 +1,0 @@
-D:\Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\bin\Debug\netstandard2.0\Parqueadero.App.Dominio.deps.json
-D:\Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\bin\Debug\netstandard2.0\Parqueadero.App.Dominio.dll
-D:\Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\bin\Debug\netstandard2.0\Parqueadero.App.Dominio.pdb
-D:\Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.csprojAssemblyReference.cache
-D:\Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.AssemblyInfoInputs.cache
-D:\Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.AssemblyInfo.cs
-D:\Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.dll
-D:\Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.pdb

@@ -1,0 +1,11 @@
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Persistencia.deps.json
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Persistencia.dll
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Persistencia.pdb
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Dominio.dll
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Dominio.pdb
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.csprojAssemblyReference.cache
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.AssemblyInfoInputs.cache
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.AssemblyInfo.cs
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.csproj.CopyComplete
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.dll
+D:\Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.pdb
