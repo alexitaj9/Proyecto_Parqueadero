@@ -5,8 +5,8 @@ namespace Parqueadero.App.Dominio
     public class EspacioParqueadero
     {
         //Propiedades de la clase
-        public int Id { get; set; }
-        public String Tipo { get;set; }
-        public Boolean Estado { get; set; }
+        public int id { get; set; }
+        public string tipo { get; set; }
+        public bool estado { get; set; }
     }
 }

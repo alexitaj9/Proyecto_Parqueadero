@@ -5,12 +5,12 @@ namespace Parqueadero.App.Dominio
     public class DatosPersona
     {
         //Propiedades de la clase
-        public int Id { get; set; }
-        public String Identificacion { get; set; }
-        public String Nombre { get; set;}
-        public String Apellidos { get; set; }
-        public String Telefono { get; set;}
-        public String Correo { get; set; }
-        public String Clave { get; set; }
+        public int id { get; set; }
+        public string identificacion { get; set; }
+        public string nombre { get; set;}
+        public string apellidos { get; set; }
+        public string telefono { get; set;}
+        public string correo { get; set; }
+        public string clave { get; set; }
     }
 }

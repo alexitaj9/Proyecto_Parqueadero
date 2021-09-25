@@ -1658,23 +1658,24 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0",
+      "Parqueadero.App.Dominio >= 1.0.0",
       "Parqueadero.App.Persistencia >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jose-\\.nuget\\packages\\": {}
+    "/home/master/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Parqueadero\\Parqueadero.App\\Parqueadero.App.Consola\\Parqueadero.App.Consola.csproj",
+      "projectUniqueName": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Consola/Parqueadero.App.Consola.csproj",
       "projectName": "Parqueadero.App.Consola",
-      "projectPath": "D:\\Parqueadero\\Parqueadero.App\\Parqueadero.App.Consola\\Parqueadero.App.Consola.csproj",
-      "packagesPath": "C:\\Users\\jose-\\.nuget\\packages\\",
-      "outputPath": "D:\\Parqueadero\\Parqueadero.App\\Parqueadero.App.Consola\\obj\\",
+      "projectPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Consola/Parqueadero.App.Consola.csproj",
+      "packagesPath": "/home/master/.nuget/packages/",
+      "outputPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Consola/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jose-\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/master/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -1684,9 +1685,13 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Parqueadero\\Parqueadero.App\\Parqueadero.App.Persistencia\\Parqueadero.App.Persistencia.csproj": {
-              "projectPath": "D:\\Parqueadero\\Parqueadero.App\\Parqueadero.App.Persistencia\\Parqueadero.App.Persistencia.csproj"
+            "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/Parqueadero.App.Dominio.csproj": {
+              "projectPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/Parqueadero.App.Dominio.csproj"
+            },
+            "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/Parqueadero.App.Persistencia.csproj": {
+              "projectPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/Parqueadero.App.Persistencia.csproj"
             }
           }
         }
@@ -1699,6 +1704,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -1717,12 +1723,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[3.1.19, 3.1.19]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.119\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/140/sdk/5.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }
