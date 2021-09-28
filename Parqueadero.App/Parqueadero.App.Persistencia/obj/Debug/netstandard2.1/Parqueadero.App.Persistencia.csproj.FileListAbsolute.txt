@@ -22,3 +22,14 @@ D:/Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/obj/Debug/netstandar
 /home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/obj/Debug/netstandard2.1/Parqueadero.App.Persistencia.csproj.CopyComplete
 /home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/obj/Debug/netstandard2.1/Parqueadero.App.Persistencia.dll
 /home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/obj/Debug/netstandard2.1/Parqueadero.App.Persistencia.pdb
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Persistencia.deps.json
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Persistencia.dll
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Persistencia.pdb
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Dominio.dll
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\bin\Debug\netstandard2.1\Parqueadero.App.Dominio.pdb
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.csprojAssemblyReference.cache
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.AssemblyInfoInputs.cache
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.AssemblyInfo.cs
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.csproj.CopyComplete
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.dll
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Persistencia\obj\Debug\netstandard2.1\Parqueadero.App.Persistencia.pdb

@@ -16,3 +16,11 @@ D:/Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/obj/Debug/netstandard2.0/
 /home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/obj/Debug/netstandard2.0/Parqueadero.App.Dominio.csproj.CoreCompileInputs.cache
 /home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/obj/Debug/netstandard2.0/Parqueadero.App.Dominio.dll
 /home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/obj/Debug/netstandard2.0/Parqueadero.App.Dominio.pdb
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\bin\Debug\netstandard2.0\Parqueadero.App.Dominio.deps.json
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\bin\Debug\netstandard2.0\Parqueadero.App.Dominio.dll
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\bin\Debug\netstandard2.0\Parqueadero.App.Dominio.pdb
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.csprojAssemblyReference.cache
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.AssemblyInfoInputs.cache
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.AssemblyInfo.cs
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.dll
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Dominio\obj\Debug\netstandard2.0\Parqueadero.App.Dominio.pdb

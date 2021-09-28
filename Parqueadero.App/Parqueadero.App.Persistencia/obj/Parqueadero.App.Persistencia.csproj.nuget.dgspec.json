@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/Parqueadero.App.Persistencia.csproj": {}
+    "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Persistencia\\Parqueadero.App.Persistencia.csproj": {}
   },
   "projects": {
-    "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/Parqueadero.App.Dominio.csproj": {
+    "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Dominio\\Parqueadero.App.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/Parqueadero.App.Dominio.csproj",
+        "projectUniqueName": "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Dominio\\Parqueadero.App.Dominio.csproj",
         "projectName": "Parqueadero.App.Dominio",
-        "projectPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/Parqueadero.App.Dominio.csproj",
-        "packagesPath": "/home/master/.nuget/packages/",
-        "outputPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/obj/",
+        "projectPath": "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Dominio\\Parqueadero.App.Dominio.csproj",
+        "packagesPath": "C:\\Users\\jose-\\.nuget\\packages\\",
+        "outputPath": "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/master/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jose-\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -24,7 +24,6 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -36,7 +35,6 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
           "dependencies": {
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -55,21 +53,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/140/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.119\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/Parqueadero.App.Persistencia.csproj": {
+    "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Persistencia\\Parqueadero.App.Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/Parqueadero.App.Persistencia.csproj",
+        "projectUniqueName": "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Persistencia\\Parqueadero.App.Persistencia.csproj",
         "projectName": "Parqueadero.App.Persistencia",
-        "projectPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/Parqueadero.App.Persistencia.csproj",
-        "packagesPath": "/home/master/.nuget/packages/",
-        "outputPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Persistencia/obj/",
+        "projectPath": "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Persistencia\\Parqueadero.App.Persistencia.csproj",
+        "packagesPath": "C:\\Users\\jose-\\.nuget\\packages\\",
+        "outputPath": "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/master/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jose-\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
@@ -79,10 +77,9 @@
         },
         "frameworks": {
           "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/Parqueadero.App.Dominio.csproj": {
-                "projectPath": "/home/master/Projects/MTReto9/Proyecto_Parqueadero/Parqueadero.App/Parqueadero.App.Dominio/Parqueadero.App.Dominio.csproj"
+              "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Dominio\\Parqueadero.App.Dominio.csproj": {
+                "projectPath": "D:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Dominio\\Parqueadero.App.Dominio.csproj"
               }
             }
           }
@@ -95,7 +92,6 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -133,7 +129,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/140/sdk/5.0.401/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.119\\RuntimeIdentifierGraph.json"
         }
       }
     }
