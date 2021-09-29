@@ -9,7 +9,7 @@ namespace Parqueadero.App.Persistencia.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "EspaciosParqueadero",
+                name: "EspacioParqueaderos",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -19,7 +19,7 @@ namespace Parqueadero.App.Persistencia.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EspaciosParqueadero", x => x.id);
+                    table.PrimaryKey("PK_EspacioParqueaderos", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,7 +56,7 @@ namespace Parqueadero.App.Persistencia.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TiposVehiculos",
+                name: "TipoVehiculos",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -65,7 +65,7 @@ namespace Parqueadero.App.Persistencia.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TiposVehiculos", x => x.id);
+                    table.PrimaryKey("PK_TipoVehiculos", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -117,9 +117,9 @@ namespace Parqueadero.App.Persistencia.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Vehiculos_TiposVehiculos_tipoVehiculoid",
+                        name: "FK_Vehiculos_TipoVehiculos_tipoVehiculoid",
                         column: x => x.tipoVehiculoid,
-                        principalTable: "TiposVehiculos",
+                        principalTable: "TipoVehiculos",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -141,9 +141,9 @@ namespace Parqueadero.App.Persistencia.Migrations
                 {
                     table.PrimaryKey("PK_Reservas", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Reservas_EspaciosParqueadero_espacioParqueaderoid",
+                        name: "FK_Reservas_EspacioParqueaderos_espacioParqueaderoid",
                         column: x => x.espacioParqueaderoid,
-                        principalTable: "EspaciosParqueadero",
+                        principalTable: "EspacioParqueaderos",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -203,7 +203,7 @@ namespace Parqueadero.App.Persistencia.Migrations
                 name: "RolEmpleados");
 
             migrationBuilder.DropTable(
-                name: "EspaciosParqueadero");
+                name: "EspacioParqueaderos");
 
             migrationBuilder.DropTable(
                 name: "Vehiculos");
@@ -212,7 +212,7 @@ namespace Parqueadero.App.Persistencia.Migrations
                 name: "Propietarios");
 
             migrationBuilder.DropTable(
-                name: "TiposVehiculos");
+                name: "TipoVehiculos");
         }
     }
 }

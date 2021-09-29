@@ -9,7 +9,7 @@ using Parqueadero.App.Persistencia;
 namespace Parqueadero.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20210925033732_Entidades")]
+    [Migration("20210929120913_Entidades")]
     partial class Entidades
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,7 +67,7 @@ namespace Parqueadero.App.Persistencia.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("EspaciosParqueadero");
+                    b.ToTable("EspacioParqueaderos");
                 });
 
             modelBuilder.Entity("Parqueadero.App.Dominio.Propietario", b =>
@@ -165,7 +165,7 @@ namespace Parqueadero.App.Persistencia.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("TiposVehiculos");
+                    b.ToTable("TipoVehiculos");
                 });
 
             modelBuilder.Entity("Parqueadero.App.Dominio.Vehiculo", b =>

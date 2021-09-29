@@ -65,7 +65,7 @@ namespace Parqueadero.App.Persistencia.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("EspaciosParqueadero");
+                    b.ToTable("EspacioParqueaderos");
                 });
 
             modelBuilder.Entity("Parqueadero.App.Dominio.Propietario", b =>
@@ -163,7 +163,7 @@ namespace Parqueadero.App.Persistencia.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("TiposVehiculos");
+                    b.ToTable("TipoVehiculos");
                 });
 
             modelBuilder.Entity("Parqueadero.App.Dominio.Vehiculo", b =>
