@@ -14422,8 +14422,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\InicioSesion\\ListaInicioSesion.cshtml",
+      "TargetPath": "Pages\\InicioSesion\\ListaInicioSesion.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorVehiculos\\ListaVehiculos.cshtml",
+      "TargetPath": "Pages\\GestorVehiculos\\ListaVehiculos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorReservas\\ListaReservas.cshtml",
+      "TargetPath": "Pages\\GestorReservas\\ListaReservas.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\ListaPropietarios.cshtml",
+      "TargetPath": "Pages\\GestorPropietarios\\ListaPropietarios.cshtml",
       "FileKind": "mvc"
     },
     {

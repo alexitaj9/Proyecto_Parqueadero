@@ -68,3 +68,7 @@ D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj
 D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\staticwebassets\Parqueadero.App.Frontend.StaticWebAssets.xml
 D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Parqueadero.App.Frontend.dll
 D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Parqueadero.App.Frontend.pdb
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorPropietarios\ListaPropietarios.cshtml.g.cs
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorReservas\ListaReservas.cshtml.g.cs
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorVehiculos\ListaVehiculos.cshtml.g.cs
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\InicioSesion\ListaInicioSesion.cshtml.g.cs
