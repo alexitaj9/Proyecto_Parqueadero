@@ -14402,6 +14402,11 @@
   "RootNamespace": "Parqueadero.App.Frontend",
   "Documents": [
     {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\CrearPropietario.cshtml",
+      "TargetPath": "Pages\\GestorPropietarios\\CrearPropietario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
@@ -14422,8 +14427,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\VerPropietario.cshtml",
+      "TargetPath": "Pages\\GestorPropietarios\\VerPropietario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\InicioSesion\\ListaInicioSesion.cshtml",
       "TargetPath": "Pages\\InicioSesion\\ListaInicioSesion.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\EditarPropietario.cshtml",
+      "TargetPath": "Pages\\GestorPropietarios\\EditarPropietario.cshtml",
       "FileKind": "mvc"
     },
     {

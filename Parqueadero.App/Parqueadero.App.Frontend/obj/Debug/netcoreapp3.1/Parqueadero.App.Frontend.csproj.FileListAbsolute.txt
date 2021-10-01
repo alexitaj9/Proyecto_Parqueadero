@@ -72,3 +72,6 @@ D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj
 D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorReservas\ListaReservas.cshtml.g.cs
 D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorVehiculos\ListaVehiculos.cshtml.g.cs
 D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\InicioSesion\ListaInicioSesion.cshtml.g.cs
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorPropietarios\CrearPropietario.cshtml.g.cs
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorPropietarios\EditarPropietario.cshtml.g.cs
+D:\Parqueadero\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorPropietarios\VerPropietario.cshtml.g.cs

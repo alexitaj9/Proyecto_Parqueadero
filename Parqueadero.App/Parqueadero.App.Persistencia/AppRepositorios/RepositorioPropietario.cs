@@ -39,9 +39,10 @@ namespace Parqueadero.App.Persistencia{
             return _contexto.Propietarios;
         }
 
-        public Propietario getPropietario(int Id)
+        public Propietario getPropietario(int id)
         {
-            return _contexto.Propietarios.FirstOrDefault(a => a.id == Id);
+            Propietario Propietario = _contexto.Propietarios.FirstOrDefault(a => a.id == id);
+            return Propietario;
         }
 
         public void removePropietario(int Id)

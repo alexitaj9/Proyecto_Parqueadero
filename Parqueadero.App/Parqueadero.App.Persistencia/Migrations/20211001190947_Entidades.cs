@@ -23,26 +23,6 @@ namespace Parqueadero.App.Persistencia.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Propietarios",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    fechaNacimiento = table.Column<DateTime>(type: "datetime", nullable: false),
-                    direccion = table.Column<string>(type: "text", nullable: true),
-                    identificacion = table.Column<string>(type: "text", nullable: true),
-                    nombre = table.Column<string>(type: "text", nullable: true),
-                    apellidos = table.Column<string>(type: "text", nullable: true),
-                    telefono = table.Column<string>(type: "text", nullable: true),
-                    correo = table.Column<string>(type: "text", nullable: true),
-                    clave = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Propietarios", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "RolEmpleados",
                 columns: table => new
                 {
@@ -69,24 +49,27 @@ namespace Parqueadero.App.Persistencia.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Empleados",
+                name: "datosPersonas",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    rolEmpleadoid = table.Column<int>(type: "int", nullable: true),
-                    identificacion = table.Column<string>(type: "text", nullable: true),
+                    identificacion = table.Column<string>(type: "varchar(767)", nullable: true),
                     nombre = table.Column<string>(type: "text", nullable: true),
                     apellidos = table.Column<string>(type: "text", nullable: true),
                     telefono = table.Column<string>(type: "text", nullable: true),
                     correo = table.Column<string>(type: "text", nullable: true),
-                    clave = table.Column<string>(type: "text", nullable: true)
+                    clave = table.Column<string>(type: "text", nullable: true),
+                    Discriminator = table.Column<string>(type: "text", nullable: false),
+                    rolEmpleadoid = table.Column<int>(type: "int", nullable: true),
+                    fechaNacimiento = table.Column<DateTime>(type: "datetime", nullable: true),
+                    direccion = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Empleados", x => x.id);
+                    table.PrimaryKey("PK_datosPersonas", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Empleados_RolEmpleados_rolEmpleadoid",
+                        name: "FK_datosPersonas_RolEmpleados_rolEmpleadoid",
                         column: x => x.rolEmpleadoid,
                         principalTable: "RolEmpleados",
                         principalColumn: "id",
@@ -111,9 +94,9 @@ namespace Parqueadero.App.Persistencia.Migrations
                 {
                     table.PrimaryKey("PK_Vehiculos", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Vehiculos_Propietarios_propietarioid",
+                        name: "FK_Vehiculos_datosPersonas_propietarioid",
                         column: x => x.propietarioid,
-                        principalTable: "Propietarios",
+                        principalTable: "datosPersonas",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -141,15 +124,15 @@ namespace Parqueadero.App.Persistencia.Migrations
                 {
                     table.PrimaryKey("PK_Reservas", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Reservas_EspacioParqueaderos_espacioParqueaderoid",
-                        column: x => x.espacioParqueaderoid,
-                        principalTable: "EspacioParqueaderos",
+                        name: "FK_Reservas_datosPersonas_propietarioid",
+                        column: x => x.propietarioid,
+                        principalTable: "datosPersonas",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Reservas_Propietarios_propietarioid",
-                        column: x => x.propietarioid,
-                        principalTable: "Propietarios",
+                        name: "FK_Reservas_EspacioParqueaderos_espacioParqueaderoid",
+                        column: x => x.espacioParqueaderoid,
+                        principalTable: "EspacioParqueaderos",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -161,8 +144,14 @@ namespace Parqueadero.App.Persistencia.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Empleados_rolEmpleadoid",
-                table: "Empleados",
+                name: "IX_datosPersonas_identificacion",
+                table: "datosPersonas",
+                column: "identificacion",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_datosPersonas_rolEmpleadoid",
+                table: "datosPersonas",
                 column: "rolEmpleadoid");
 
             migrationBuilder.CreateIndex(
@@ -194,13 +183,7 @@ namespace Parqueadero.App.Persistencia.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Empleados");
-
-            migrationBuilder.DropTable(
                 name: "Reservas");
-
-            migrationBuilder.DropTable(
-                name: "RolEmpleados");
 
             migrationBuilder.DropTable(
                 name: "EspacioParqueaderos");
@@ -209,10 +192,13 @@ namespace Parqueadero.App.Persistencia.Migrations
                 name: "Vehiculos");
 
             migrationBuilder.DropTable(
-                name: "Propietarios");
+                name: "datosPersonas");
 
             migrationBuilder.DropTable(
                 name: "TipoVehiculos");
+
+            migrationBuilder.DropTable(
+                name: "RolEmpleados");
         }
     }
 }

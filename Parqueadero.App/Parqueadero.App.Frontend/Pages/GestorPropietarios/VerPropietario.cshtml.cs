@@ -9,16 +9,16 @@ using Parqueadero.App.Persistencia;
 
 namespace Parqueadero.App.Frontend.Pages
 {
-    public class ListaPropietariosModel : PageModel
+    public class VerPropietarioModel : PageModel
     {
-        private readonly IRepositorioPropietario repositorioPropietario;
-        public IEnumerable<Propietario> propietarios;
-        public ListaPropietariosModel(IRepositorioPropietario repositorioPropietario){
+        private IRepositorioPropietario repositorioPropietario;
+        public Propietario propietario { get; set; }
+        public VerPropietarioModel(IRepositorioPropietario repositorioPropietario){
             this.repositorioPropietario = repositorioPropietario;
         }
-        public void OnGet()
+        public void OnGet(int id)
         {
-            propietarios=repositorioPropietario.getAllPropietario();
+            propietario=repositorioPropietario.getPropietario(id);
         }
     }
 }

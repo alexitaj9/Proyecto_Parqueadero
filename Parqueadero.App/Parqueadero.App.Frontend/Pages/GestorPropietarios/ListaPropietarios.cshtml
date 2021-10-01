@@ -2,3 +2,36 @@
 @model Parqueadero.App.Frontend.Pages.ListaPropietariosModel
 @{
 }
+<h1>Gestionar Propietarios</h1>
+<p>En está pagina podrás gestionar los propietarios de los vehiculos del parqueadero</p>
+<a class="btn btn-primary table-btn" asp-page="./CrearPropietario">Agregar Propietario</a>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Identificación</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Fecha de nacimiento</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Clave</th>
+    </tr>
+  </thead>
+@foreach(var propietario in Model.propietarios){
+    <tr>
+        <td>@propietario.identificacion</td>
+        <td>@propietario.nombre</td>
+        <td>@propietario.apellidos</td>
+        <td>@propietario.fechaNacimiento</td>
+        <td>@propietario.direccion</td>
+        <td>@propietario.telefono</td>
+        <td>@propietario.correo</td>
+        <td>@propietario.clave</td>
+        <td>
+          <a class="btn btn-primary table-btn" asp-page="./VerPropietario" asp-route-cedula="@propietario.identificacion">Ver más</a>
+          <br>
+          <a class="btn btn-primary table-btn" asp-page="./VerPropietario" asp-route-cedula="@propietario.identificacion">Editar</a></td>
+    </tr>
+}
+</table>

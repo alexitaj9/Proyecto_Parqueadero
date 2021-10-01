@@ -7,7 +7,7 @@ namespace Parqueadero.App.Persistencia
     public class AppContext : DbContext
     {
         //Propiedades
-        //public DbSet<DatosPersona> datosPersonas { get; set; }
+        public DbSet<DatosPersona> datosPersonas { get; set; }
         public DbSet<Empleado> Empleados { get; set; }
         public DbSet<EspacioParqueadero> EspacioParqueaderos { get; set; }
         public DbSet<Propietario> Propietarios { get; set; }
@@ -23,12 +23,12 @@ namespace Parqueadero.App.Persistencia
                 optionsBuilder.UseMySQL("server=localhost;user=root;password=;database=ParqueaderoBD;");
             }
         }
-        /*
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<DatosPersona>()
-                .HasIndex(u => u.id)
+                .HasIndex(u => u.identificacion)
                 .IsUnique();
-        }*/
+        }
     }
 }

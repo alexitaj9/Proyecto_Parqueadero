@@ -9,7 +9,7 @@ using Parqueadero.App.Persistencia;
 namespace Parqueadero.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20210929120913_Entidades")]
+    [Migration("20211001190947_Entidades")]
     partial class Entidades
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,11 +19,15 @@ namespace Parqueadero.App.Persistencia.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Parqueadero.App.Dominio.Empleado", b =>
+            modelBuilder.Entity("Parqueadero.App.Dominio.DatosPersona", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("apellidos")
                         .HasColumnType("text");
@@ -35,22 +39,19 @@ namespace Parqueadero.App.Persistencia.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("identificacion")
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(767)");
 
                     b.Property<string>("nombre")
                         .HasColumnType("text");
-
-                    b.Property<int?>("rolEmpleadoid")
-                        .HasColumnType("int");
 
                     b.Property<string>("telefono")
                         .HasColumnType("text");
 
                     b.HasKey("id");
 
-                    b.HasIndex("rolEmpleadoid");
+                    b.ToTable("datosPersonas");
 
-                    b.ToTable("Empleados");
+                    b.HasDiscriminator<string>("Discriminator").HasValue("DatosPersona");
                 });
 
             modelBuilder.Entity("Parqueadero.App.Dominio.EspacioParqueadero", b =>
@@ -68,41 +69,6 @@ namespace Parqueadero.App.Persistencia.Migrations
                     b.HasKey("id");
 
                     b.ToTable("EspacioParqueaderos");
-                });
-
-            modelBuilder.Entity("Parqueadero.App.Dominio.Propietario", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("apellidos")
-                        .HasColumnType("text");
-
-                    b.Property<string>("clave")
-                        .HasColumnType("text");
-
-                    b.Property<string>("correo")
-                        .HasColumnType("text");
-
-                    b.Property<string>("direccion")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("fechaNacimiento")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("identificacion")
-                        .HasColumnType("text");
-
-                    b.Property<string>("nombre")
-                        .HasColumnType("text");
-
-                    b.Property<string>("telefono")
-                        .HasColumnType("text");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Propietarios");
                 });
 
             modelBuilder.Entity("Parqueadero.App.Dominio.Reserva", b =>
@@ -206,11 +172,30 @@ namespace Parqueadero.App.Persistencia.Migrations
 
             modelBuilder.Entity("Parqueadero.App.Dominio.Empleado", b =>
                 {
-                    b.HasOne("Parqueadero.App.Dominio.RolEmpleado", "rolEmpleado")
-                        .WithMany()
-                        .HasForeignKey("rolEmpleadoid");
+                    b.HasBaseType("Parqueadero.App.Dominio.DatosPersona");
 
-                    b.Navigation("rolEmpleado");
+                    b.Property<int?>("rolEmpleadoid")
+                        .HasColumnType("int");
+
+                    b.HasIndex("rolEmpleadoid");
+
+                    b.HasDiscriminator().HasValue("Empleado");
+                });
+
+            modelBuilder.Entity("Parqueadero.App.Dominio.Propietario", b =>
+                {
+                    b.HasBaseType("Parqueadero.App.Dominio.DatosPersona");
+
+                    b.Property<string>("direccion")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("fechaNacimiento")
+                        .HasColumnType("datetime");
+
+                    b.HasIndex("identificacion")
+                        .IsUnique();
+
+                    b.HasDiscriminator().HasValue("Propietario");
                 });
 
             modelBuilder.Entity("Parqueadero.App.Dominio.Reserva", b =>
@@ -247,6 +232,15 @@ namespace Parqueadero.App.Persistencia.Migrations
                     b.Navigation("propietario");
 
                     b.Navigation("tipoVehiculo");
+                });
+
+            modelBuilder.Entity("Parqueadero.App.Dominio.Empleado", b =>
+                {
+                    b.HasOne("Parqueadero.App.Dominio.RolEmpleado", "rolEmpleado")
+                        .WithMany()
+                        .HasForeignKey("rolEmpleadoid");
+
+                    b.Navigation("rolEmpleado");
                 });
 #pragma warning restore 612, 618
         }
