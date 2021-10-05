@@ -3,57 +3,60 @@
 @using Parqueadero.App.Dominio
 @{
 }
-<h1>Crear Propietario</h1>
-<form method="post" class="mt-3">
-    <div class="form-group row">
-        <label asp-for="propietario.identificacion" class="col-sm-2">Identificación</label>
-        <input asp-for="propietario.identificacion" class="form-control" value="" required>
-        <span class="text-danger" asp-validation-for="propietario.identificacion"></span>
-    </div>
-    <div class="form-group row">
-        <label asp-for="propietario.nombre" class="col-sm-2">Nombre</label>
-        <input asp-for="propietario.nombre" class="form-control" value="">
-        <span class="text-danger" asp-validation-for="propietario.nombre"></span>
-    </div>   
-    <div class="form-group row">
-        <label asp-for="propietario.apellidos" class="col-sm-2">Apellidos</label>
-        <input asp-for="propietario.apellidos" class="form-control" value="">
-        <span class="text-danger" asp-validation-for="propietario.apellidos"></span>
-    </div>  
-    <div class="form-group row">
-        <label asp-for="propietario.fechaNacimiento" class="col-sm-2">Fecha de nacimiento</label>
-        <input asp-for="propietario.fechaNacimiento" class="form-control" value="">
-        <span class="text-danger" asp-validation-for="propietario.fechaNacimiento"></span>
 
-    </div>  
-    <div class="form-group row">
-        <label asp-for="propietario.direccion" class="col-sm-2">Dirección</label>
-        <input asp-for="propietario.direccion" class="form-control" value="" required>
-        <span class="text-danger" asp-validation-for="propietario.direccion"></span>
-
-    </div>  
-    <div class="form-group row">
-        <label asp-for="propietario.telefono" class="col-sm-2">Telefono</label>
-        <input asp-for="propietario.telefono" class="form-control" value=""  required>
-        <span class="text-danger" asp-validation-for="propietario.telefono"></span>
-    </div> 
-    <div class="form-group row">
-        <label asp-for="propietario.correo" class="col-sm-2">Correo electrónico</label>
-        <input asp-for="propietario.correo" class="form-control" value="" required>
-        <span class="text-danger" asp-validation-for="propietario.correo"></span>
-    </div> 
-    <div class="form-group row">
-        <label asp-for="propietario.clave" class="col-sm-2">Clave</label>
-        <input asp-for="propietario.clave" class="form-control" value="" required>
-        <span class="text-danger" asp-validation-for="propietario.clave"></span>
-    </div> 
-    <!--<div class="form-group row">
-        <label asp-for="propietario.password" class="col-sm-2">Password</label>
-        <input asp-for="propietario.password" class="form-control" value="" required>
-        <span class="text-danger" asp-validation-for="propietario.password"></span>
-    </div> -->
-    <div class="form-group row">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a asp-page="./ListaPropietarios" class="btn btn-primary">Cancelar</a>
-    </div>
-</form>
+<div class="container my-3 p-4 shadow" style="max-width: 680px">
+    <header class="mb-4 text-primary text-center">
+        <h1>Crear Propietario</h1>
+    </header>
+    <form method="POST">
+        <div class="row">
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.nombre" type="text"  placeholder="Nombre">
+                <span class="text-danger" asp-validation-for="propietario.nombre"></span>
+            </div>   
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.apellidos" type="text" placeholder="Apellidos">
+                <span class="text-danger" asp-validation-for="propietario.apellidos"></span>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.identificacion" type="text" placeholder="Identificación">
+                <span class="text-danger" asp-validation-for="propietario.identificacion"></span>
+            </div>
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.fechaNacimiento" type="date" placeholder="Fecha de nacimiento">
+                <span class="text-danger" asp-validation-for="propietario.fechaNacimiento"></span>
+    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.direccion" type="text" placeholder="Dirección">
+                <span class="text-danger" asp-validation-for="propietario.direccion"></span>
+            </div>  
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.telefono" type="text" placeholder="Teléfono">
+                <span class="text-danger" asp-validation-for="propietario.telefono"></span>
+            </div> 
+        </div>
+        <div class="form-group">
+            <input class="form-control" asp-for="propietario.correo" type="email" placeholder="Correo electrónico">
+            <span class="text-danger" asp-validation-for="propietario.correo"></span>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.clave" type="password" placeholder="Contraseña">
+                <span class="text-danger" asp-validation-for="propietario.clave"></span>
+            </div> 
+            <div class="col form-group">
+                <input class="form-control" type="password" placeholder="Confirmar Contraseña">
+                <span class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-block btn-primary" type="submit">Crear Cuenta</button>
+            <a class="btn btn-block btn-link" asp-page="../Index">Ya Tengo Cuenta</a>
+        </div>
+    </form>
+</div>

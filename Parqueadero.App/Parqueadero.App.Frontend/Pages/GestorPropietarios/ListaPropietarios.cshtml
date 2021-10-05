@@ -2,10 +2,20 @@
 @model Parqueadero.App.Frontend.Pages.ListaPropietariosModel
 @{
 }
-<h1>Gestionar Propietarios</h1>
-<p>En está pagina podrás gestionar los propietarios de los vehiculos del parqueadero</p>
-<a class="btn btn-primary table-btn" asp-page="./CrearPropietario">Agregar Propietario</a>
-<table class="table">
+
+<nav class="navbar navbar-dark bg-primary shadow" id="navigationBar">
+    <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
+        </li>
+    </ul>
+</nav>
+
+
+<a class="btn btn-primary" asp-page="./CrearPropietario">Agregar Propietario</a>
+
+<table class="table my-4">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Identificación</th>
@@ -15,10 +25,10 @@
       <th scope="col">Dirección</th>
       <th scope="col">Telefono</th>
       <th scope="col">Correo</th>
-      <th scope="col">Clave</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
-@foreach(var propietario in Model.propietarios){
+  @foreach(var propietario in Model.propietarios) {
     <tr>
         <td>@propietario.identificacion</td>
         <td>@propietario.nombre</td>
@@ -27,11 +37,65 @@
         <td>@propietario.direccion</td>
         <td>@propietario.telefono</td>
         <td>@propietario.correo</td>
-        <td>@propietario.clave</td>
         <td>
-          <a class="btn btn-primary table-btn" asp-page="./VerPropietario" asp-route-cedula="@propietario.identificacion">Ver más</a>
-          <br>
-          <a class="btn btn-primary table-btn" asp-page="./VerPropietario" asp-route-cedula="@propietario.identificacion">Editar</a></td>
+          <a class="btn btn-block btn-primary table-btn" asp-page="./VerPropietario" asp-route-cedula="@propietario.identificacion">Editar</a>
+          <a class="btn btn-block btn-danger table-btn text-white">Eliminar</a>
+        </td>
     </tr>
-}
+  }
 </table>
+
+    <!--header class="mb-4 text-primary text-center">
+        <h1>Crear Propietario</h1>
+    </header>
+    <form method="POST">
+        <div class="row">
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.nombre" type="text"  placeholder="Nombre">
+                <span class="text-danger" asp-validation-for="propietario.nombre"></span>
+            </div>   
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.apellidos" type="text" placeholder="Apellidos">
+                <span class="text-danger" asp-validation-for="propietario.apellidos"></span>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.identificacion" type="text" placeholder="Identificación">
+                <span class="text-danger" asp-validation-for="propietario.identificacion"></span>
+            </div>
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.fechaNacimiento" type="date" placeholder="Fecha de nacimiento">
+                <span class="text-danger" asp-validation-for="propietario.fechaNacimiento"></span>
+    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.direccion" type="text" placeholder="Dirección">
+                <span class="text-danger" asp-validation-for="propietario.direccion"></span>
+            </div>  
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.telefono" type="text" placeholder="Teléfono">
+                <span class="text-danger" asp-validation-for="propietario.telefono"></span>
+            </div> 
+        </div>
+        <div class="form-group">
+            <input class="form-control" asp-for="propietario.correo" type="email" placeholder="Correo electrónico">
+            <span class="text-danger" asp-validation-for="propietario.correo"></span>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <input class="form-control" asp-for="propietario.clave" type="password" placeholder="Contraseña">
+                <span class="text-danger" asp-validation-for="propietario.clave"></span>
+            </div> 
+            <div class="col form-group">
+                <input class="form-control" type="password" placeholder="Confirmar Contraseña">
+                <span class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-block btn-primary" type="submit">Crear Cuenta</button>
+            <a class="btn btn-block btn-link" asp-page="../Index">Ya Tengo Cuenta</a>
+        </div>
+    </form-->

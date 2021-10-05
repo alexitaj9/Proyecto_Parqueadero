@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace Parqueadero.App.Frontend
 {
     public class Startup
     {
+        //Declarar contexto
+        Persistencia.AppContext _context = new Persistencia.AppContext();
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,13 +32,13 @@ namespace Parqueadero.App.Frontend
             services.AddRazorPages();
 
             //Relacion con los repositorios
-            services.AddSingleton<IRepositorioPropietario>(new RepositorioPropietario(new AppContext()));
-            services.AddSingleton<IRepositorioEmpleado>(new RepositorioEmpleado(new AppContext()));
-            services.AddSingleton<IRepositorioTipoVehiculo>(new RepositorioTipoVehiculo(new AppContext()));
-            services.AddSingleton<IRepositorioEspacioParqueadero>(new RepositorioEspacioParqueadero(new AppContext()));
-            services.AddSingleton<IRepositorioReserva>(new RepositorioReserva(new AppContext()));
-            services.AddSingleton<IRepositorioRolEmpleado>(new RepositorioRolEmpleado(new AppContext()));
-            services.AddSingleton<IRepositorioVehiculo>(new RepositorioVehiculo(new AppContext()));
+            services.AddSingleton<IRepositorioPropietario>(new RepositorioPropietario(_context));
+            services.AddSingleton<IRepositorioEmpleado>(new RepositorioEmpleado(_context));
+            services.AddSingleton<IRepositorioTipoVehiculo>(new RepositorioTipoVehiculo(_context));
+            services.AddSingleton<IRepositorioEspacioParqueadero>(new RepositorioEspacioParqueadero(_context));
+            services.AddSingleton<IRepositorioReserva>(new RepositorioReserva(_context));
+            services.AddSingleton<IRepositorioRolEmpleado>(new RepositorioRolEmpleado(_context));
+            services.AddSingleton<IRepositorioVehiculo>(new RepositorioVehiculo(_context));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
