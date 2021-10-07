@@ -2,14 +2,64 @@
 @model Parqueadero.App.Frontend.Pages.VerPropietarioModel
 @{
 }
-<h1>Detalle del propietario @Model.propietario.nombre</h1>
-<ul>
-    <li>Identificación: @Model.propietario.identificacion</li>
-    <li>Nombre: @Model.propietario.nombre</li>
-    <li>Apellidos: @Model.propietario.apellidos</li>
-    <li>Fecha de nacimiento: @Model.propietario.fechaNacimiento</li>
-    <li>Dirección: @Model.propietario.direccion</li>
-    <li>Telefono: @Model.propietario.telefono</li>
-    <li>Correo: @Model.propietario.correo</li>
-    <li>Clave: @Model.propietario.clave</li>
-</ul>
+
+<nav class="navbar navbar-dark bg-primary shadow" id="navigationBar">
+    <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
+        </li>
+    </ul>
+</nav>
+
+<section>
+    <div class="container bg-white my-4 p-4 shadow">
+        <header class="text-center text-primary mb-4">
+            <h1>Editar Propietario</h1>
+        </header>
+        <form method="POST" id="formUpdate">
+            <div class="row">
+                <div class="col form-group">
+                    <input class="form-control" asp-for="propietario.nombre" type="text"  placeholder="Nombre">
+                    <span class="text-danger" asp-validation-for="propietario.nombre"></span>
+                </div>   
+                <div class="col form-group">
+                    <input class="form-control" asp-for="propietario.apellidos" type="text" placeholder="Apellidos">
+                    <span class="text-danger" asp-validation-for="propietario.apellidos"></span>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <input class="form-control" asp-for="propietario.identificacion" type="text" placeholder="Identificación">
+                    <span class="text-danger" asp-validation-for="propietario.identificacion"></span>
+                </div>
+                <div class="col form-group">
+                    <input class="form-control" asp-for="propietario.fechaNacimiento" type="date"  placeholder="Fecha de nacimiento">
+                    <span class="text-danger" asp-validation-for="propietario.fechaNacimiento"></span>
+        
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <input class="form-control" asp-for="propietario.direccion" placeholder="Dirección">
+                    <span class="text-danger" asp-validation-for="propietario.direccion"></span>
+                </div>  
+                <div class="col form-group">
+                    <input class="form-control" asp-for="propietario.telefono" type="text" placeholder="Teléfono">
+                    <span class="text-danger" asp-validation-for="propietario.telefono"></span>
+                </div> 
+            </div>
+            <div class="form-group">
+                <input class="form-control" asp-for="propietario.correo" type="email"  placeholder="Correo electrónico">
+                <span class="text-danger" asp-validation-for="propietario.correo"></span>
+            </div>
+            <div class="form-group">
+                <input class="form-control" asp-for="propietario.clave" type="password" placeholder="Nueva contraseña">
+                <span class="text-danger" asp-validation-for="propietario.clave"></span>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Actualizar información</button>
+            </div>
+        </form>
+    </div>
+</section>

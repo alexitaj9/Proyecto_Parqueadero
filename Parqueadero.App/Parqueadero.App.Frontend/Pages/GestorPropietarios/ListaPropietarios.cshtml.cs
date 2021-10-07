@@ -11,14 +11,45 @@ namespace Parqueadero.App.Frontend.Pages
 {
     public class ListaPropietariosModel : PageModel
     {
+        //Instancia repositorio
         private readonly IRepositorioPropietario repositorioPropietario;
-        public IEnumerable<Propietario> propietarios;
+
+        //Propiedades
+        public IEnumerable<Propietario> propietarios { get; set; }
+        public Propietario nuevoPropietario { get; set; }
+        public Propietario editarPropietario { get; set; }
+
+        //Constructor
         public ListaPropietariosModel(IRepositorioPropietario repositorioPropietario){
+            //Asignacion
             this.repositorioPropietario = repositorioPropietario;
         }
+        
+        //Get Propietarios
         public void OnGet()
-        {
-            propietarios=repositorioPropietario.getAllPropietario();
+        {   
+            //Objeto Modelo
+            propietarios = repositorioPropietario.getAllPropietario();
+        }
+
+        //POST Crear Propietario
+        public IActionResult OnPost(Propietario nuevoPropietario) {
+            if (ModelState.IsValid) {
+                try {
+                    //Login
+                    repositorioPropietario.addPropietario(nuevoPropietario);
+                    
+                    //Redireccion
+                    return RedirectToPage("./ListaPropietarios");
+                }
+                catch {   
+                    //Redireccion
+                    return RedirectToPage("../Error");
+                }
+            }
+            else {
+                return Page();
+            }
         }
     }
 }

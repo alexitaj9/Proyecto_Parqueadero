@@ -12,8 +12,7 @@
     </ul>
 </nav>
 
-
-<a class="btn btn-primary" asp-page="./CrearPropietario">Agregar Propietario</a>
+<a class="btn btn-primary" data-toggle="modal" data-target="#formRegistroPropietario">Agregar Propietario</a>
 
 <table class="table my-4">
   <thead class="thead-dark">
@@ -38,64 +37,72 @@
         <td>@propietario.telefono</td>
         <td>@propietario.correo</td>
         <td>
-          <a class="btn btn-block btn-primary table-btn" asp-page="./VerPropietario" asp-route-cedula="@propietario.identificacion">Editar</a>
-          <a class="btn btn-block btn-danger table-btn text-white">Eliminar</a>
+          <a class="btn btn-block btn-primary table-btn" asp-page="./VerPropietario" asp-route-id="@propietario.id">Editar</a>
+          <a class="btn btn-block btn-danger table-btn text-white" asp-page="./EliminarPropietario" asp-route-id="@propietario.id">Eliminar</a>
         </td>
     </tr>
   }
 </table>
 
-    <!--header class="mb-4 text-primary text-center">
-        <h1>Crear Propietario</h1>
-    </header>
-    <form method="POST">
-        <div class="row">
-            <div class="col form-group">
-                <input class="form-control" asp-for="propietario.nombre" type="text"  placeholder="Nombre">
-                <span class="text-danger" asp-validation-for="propietario.nombre"></span>
-            </div>   
-            <div class="col form-group">
-                <input class="form-control" asp-for="propietario.apellidos" type="text" placeholder="Apellidos">
-                <span class="text-danger" asp-validation-for="propietario.apellidos"></span>
-            </div> 
-        </div>
-        <div class="row">
-            <div class="col form-group">
-                <input class="form-control" asp-for="propietario.identificacion" type="text" placeholder="Identificación">
-                <span class="text-danger" asp-validation-for="propietario.identificacion"></span>
+<!--Modal para registrar propietarios-->
+<div class="modal modal-fade" id="formRegistroPropietario" tabindex="-1" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registrar Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col form-group">
+                    <input class="form-control" asp-for="nuevoPropietario.nombre" type="text"  placeholder="Nombre">
+                    <span class="text-danger" asp-validatio-for="nuevoPropietario.nombre"></span>
+                </div>   
+                <div class="col form-group">
+                    <input class="form-control" asp-for="nuevoPropietario.apellidos" type="text" placeholder="Apellidos">
+                    <span class="text-danger" asp-validation-for="nuevoPropietario.apellidos"></span>
+                </div> 
             </div>
-            <div class="col form-group">
-                <input class="form-control" asp-for="propietario.fechaNacimiento" type="date" placeholder="Fecha de nacimiento">
-                <span class="text-danger" asp-validation-for="propietario.fechaNacimiento"></span>
-    
+            <div class="row">
+                <div class="col form-group">
+                    <input class="form-control" asp-for="nuevoPropietario.identificacion" type="text" placeholder="Identificación">
+                    <span class="text-danger" asp-validation-for="nuevoPropietario.identificacion"></span>
+                </div>
+                <div class="col form-group">
+                    <input class="form-control" asp-for="nuevoPropietario.fechaNacimiento" type="date" placeholder="Fecha de nacimiento">
+                    <span class="text-danger" asp-validation-for="nuevoPropietario.fechaNacimiento"></span>
+        
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <input class="form-control" asp-for="nuevoPropietario.direccion" type="text" placeholder="Dirección">
+                    <span class="text-danger" asp-validation-for="nuevoPropietario.direccion"></span>
+                </div>  
+                <div class="col form-group">
+                    <input class="form-control" asp-for="nuevoPropietario.telefono" type="text" placeholder="Teléfono">
+                    <span class="text-danger" asp-validation-for="nuevoPropietario.telefono"></span>
+                </div> 
+            </div>
+            <div class="form-group">
+                <input class="form-control" asp-for="nuevoPropietario.correo" type="email" placeholder="Correo electrónico">
+                <span class="text-danger" asp-validation-for="nuevoPropietario.correo"></span>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <input class="form-control" asp-for="nuevoPropietario.clave" type="password" placeholder="Contraseña">
+                    <span class="text-danger" asp-validation-for="nuevoPropietario.clave"></span>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col form-group">
-                <input class="form-control" asp-for="propietario.direccion" type="text" placeholder="Dirección">
-                <span class="text-danger" asp-validation-for="propietario.direccion"></span>
-            </div>  
-            <div class="col form-group">
-                <input class="form-control" asp-for="propietario.telefono" type="text" placeholder="Teléfono">
-                <span class="text-danger" asp-validation-for="propietario.telefono"></span>
-            </div> 
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Registrar Usuario</button>
         </div>
-        <div class="form-group">
-            <input class="form-control" asp-for="propietario.correo" type="email" placeholder="Correo electrónico">
-            <span class="text-danger" asp-validation-for="propietario.correo"></span>
-        </div>
-        <div class="row">
-            <div class="col form-group">
-                <input class="form-control" asp-for="propietario.clave" type="password" placeholder="Contraseña">
-                <span class="text-danger" asp-validation-for="propietario.clave"></span>
-            </div> 
-            <div class="col form-group">
-                <input class="form-control" type="password" placeholder="Confirmar Contraseña">
-                <span class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-block btn-primary" type="submit">Crear Cuenta</button>
-            <a class="btn btn-block btn-link" asp-page="../Index">Ya Tengo Cuenta</a>
-        </div>
-    </form-->
+      </form>
+    </div>
+  </div>
+</div>

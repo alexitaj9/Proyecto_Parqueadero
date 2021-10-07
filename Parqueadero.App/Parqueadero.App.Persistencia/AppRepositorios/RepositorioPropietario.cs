@@ -7,9 +7,12 @@ namespace Parqueadero.App.Persistencia{
     {
         private readonly AppContext _contexto;
 
+        //Constructor
         public RepositorioPropietario(AppContext contexto){
             this._contexto = contexto;
         }
+
+        //Agregar propietario
         public Propietario addPropietario(Propietario Propietario)
         {
             Propietario PropietarioNueva = _contexto.Add(Propietario).Entity;
@@ -17,20 +20,29 @@ namespace Parqueadero.App.Persistencia{
             return PropietarioNueva;
         }
 
+        //Editar propietario
         public Propietario editPropietario(Propietario Propietario)
-        {
-            Propietario PropietarioAEditar = _contexto.Propietarios.FirstOrDefault(a => a.id == Propietario.id);
-            if (PropietarioAEditar != null){
+        {   
+            //Capturar
+            Propietario PropietarioAEditar = _contexto.Propietarios.FirstOrDefault(p => p.id == Propietario.id);
+            
+            //Editar
+            if (PropietarioAEditar != null) {
+                //Asignar
+                PropietarioAEditar.nombre = Propietario.nombre;
                 PropietarioAEditar.apellidos = Propietario.apellidos;
-                PropietarioAEditar.clave = Propietario.clave;
-                PropietarioAEditar.correo = Propietario.correo;
                 PropietarioAEditar.identificacion = Propietario.identificacion;
-                PropietarioAEditar.nombre = Propietario.nombre;                
-                PropietarioAEditar.telefono = Propietario.telefono;
                 PropietarioAEditar.fechaNacimiento = Propietario.fechaNacimiento;
                 PropietarioAEditar.direccion = Propietario.direccion;
+                PropietarioAEditar.telefono = Propietario.telefono;
+                PropietarioAEditar.correo = Propietario.correo;
+                PropietarioAEditar.clave = Propietario.clave;
+
+                //Guardar cambios
                 _contexto.SaveChanges();
             }
+
+            //Retorno
             return PropietarioAEditar;
         }
 
@@ -45,9 +57,9 @@ namespace Parqueadero.App.Persistencia{
             return Propietario;
         }
 
-        public void removePropietario(int Id)
+        public void removePropietario(int id)
         {
-            Propietario Propietario = _contexto.Propietarios.FirstOrDefault(a => a.id == Id);
+            Propietario Propietario = _contexto.Propietarios.FirstOrDefault(a => a.id == id);
             if(Propietario != null){
                 _contexto.Propietarios.Remove(Propietario);
                 _contexto.SaveChanges();
