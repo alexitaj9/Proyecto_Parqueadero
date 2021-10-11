@@ -10,10 +10,10 @@ namespace Parqueadero.App.Dominio
         public TipoVehiculo tipoVehiculo { get; set; }
         //Propiedades de la clase
         public int id { get; set; }
-        public String placa { get; set; }
-        public String marca { get; set; }
-        public String modelo { get; set; }
-        public String color { get; set; }
-        public String observaciones { get; set; }
+        public string placa { get; set; }
+        public string marca { get; set; }
+        public string modelo { get; set; }
+        public string color { get; set; }
+        public string observaciones { get; set; }
     }
 }

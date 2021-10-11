@@ -1,0 +1,59 @@
+﻿@page
+@model Parqueadero.App.Frontend.Pages.CrearVehiculoModel
+@using Parqueadero.App.Dominio
+@{
+}
+
+<div class="container my-3 p-4 shadow" style="max-width: 680px">
+    <header class="mb-4 text-primary text-center">
+        <h1>Crear Vehiculo</h1>
+    </header>
+    <form method="POST">
+        <div class="row">
+            <div class="col form-group">
+                <label asp-for="idPropietarios" class="form-control">Propietario</label>
+                <select class="form-control" asp-for="idPropietarios" asp-items="@Model.propietarios"></select>              
+            </div>
+            <div class="col form-group">
+                <label asp-for="idTipoVehiculos" class="form-control">Tipo Vehiculo</label>
+                <select class="form-control" asp-for="idTipoVehiculos" asp-items="@Model.tipoVehiculo"></select>                            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <label asp-for="vehiculo.placa" class="form-control">Placa</label>
+                <input class="form-control" asp-for="vehiculo.placa" type="text" placeholder="placa">
+                <span class="text-danger" asp-validation-for="vehiculo.placa"></span>
+            </div>
+            <div class="col form-group">
+                <label asp-for="vehiculo.marca" class="form-control">Marca</label>
+                <input class="form-control" asp-for="vehiculo.marca" type="text" placeholder="marca">
+                <span class="text-danger" asp-validation-for="vehiculo.marca"></span>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <label asp-for="vehiculo.color" class="form-control">Color</label>
+                <input class="form-control" asp-for="vehiculo.color" type="text" placeholder="color">
+                <span class="text-danger" asp-validation-for="vehiculo.color"></span>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="vehiculo.modelo" class="form-control">Modelo</label>
+            <input class="form-control" asp-for="vehiculo.modelo" type="text" placeholder="modelo">
+            <span class="text-danger" asp-validation-for="vehiculo.modelo"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="vehiculo.observaciones" class="form-control">Observaciones</label>
+            <input class="form-control" asp-for="vehiculo.observaciones" type="text" placeholder="observaciones">
+            <span class="text-danger" asp-validation-for="vehiculo.observaciones"></span>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-block btn-primary" type="submit">Crear Vehiculo</button>
+            <a class="btn btn-block btn-link" asp-page="./ListaVehiculos"></a>
+        </div>
+    </form>
+</div>

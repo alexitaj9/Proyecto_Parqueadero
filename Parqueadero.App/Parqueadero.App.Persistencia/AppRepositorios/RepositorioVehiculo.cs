@@ -39,14 +39,14 @@ namespace Parqueadero.App.Persistencia{
             return _contexto. Vehiculos;
         }
 
-        public Vehiculo getVehiculo(int Id)
+        public Vehiculo getVehiculo(int id)
         {
-            return _contexto.Vehiculos.FirstOrDefault(a => a.id == Id);
+            return _contexto.Vehiculos.FirstOrDefault(a => a.id == id);
         }
 
-        public void removeVehiculo(int Id)
+        public void removeVehiculo(int id)
         {
-            Vehiculo Vehiculo = _contexto.Vehiculos.FirstOrDefault(a => a.id == Id);
+            Vehiculo Vehiculo = _contexto.Vehiculos.FirstOrDefault(a => a.id == id);
             if(Vehiculo != null){
                 _contexto.Vehiculos.Remove(Vehiculo);
                 _contexto.SaveChanges();
