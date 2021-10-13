@@ -1,4 +1,57 @@
 ﻿@page
 @model Parqueadero.App.Frontend.Pages.CrearReservaModel
+@using Parqueadero.App.Dominio
 @{
 }
+<div class="container my-3 p-4 shadow" style="max-width: 680px">
+    <header class="mb-4 text-primary text-center">
+        <h1>Crear Vehiculo</h1>
+    </header>
+    <form method="POST">
+        <div class="row">
+            <div class="col form-group">
+                <label asp-for="idPropietarios" class="form-control">Propietario</label>
+                <select class="form-control" asp-for="idPropietarios" asp-items="@Model.propietarios"></select>              
+            </div>
+            <div class="col form-group">
+                <label asp-for="idVehiculos" class="form-control">Vehiculo</label>
+                <select class="form-control" asp-for="idVehiculos" asp-items="@Model.Vehiculo"></select>                            
+            </div>
+            <div class="col form-group">
+                <label asp-for="idEspacioParqueadero" class="form-control">Espacio Parqueo</label>
+                <select class="form-control" asp-for="idEspacioParqueadero" asp-items="@Model.espacioParqueadero"></select>                            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <label asp-for="reserva.fechaReserva" class="form-control">Fecha reserva</label>
+                <input class="form-control" asp-for="reserva.fechaReserva" type="date" placeholder="fecha Reserva" required>
+                <span class="text-danger" asp-validation-for="reserva.fechaReserva"></span>
+            </div>
+            <div class="col form-group">
+                <label asp-for="reserva.inicioReserva" class="form-control">Fecha inicio reserva</label>
+                <input class="form-control" asp-for="reserva.inicioReserva" type="date" placeholder="inicio Reserva" required>
+                <span class="text-danger" asp-validation-for="reserva.inicioReserva"></span>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col form-group">
+                <label asp-for="reserva.finReserva" class="form-control">Fecha fin reserva</label>
+                <input class="form-control" asp-for="reserva.finReserva" type="date" placeholder="fin Reserva" required>
+                <span class="text-danger" asp-validation-for="reserva.finReserva"></span>
+            </div>
+
+        </div>
+        
+
+        <div class="form-group">
+            <button class="btn btn-block btn-primary" type="submit">Crear Reserva</button>
+            <a class="btn btn-block btn-link" asp-page="./ListaReservas"></a>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-block btn-primary" >Cancelar</button>
+            <a class="btn btn-block btn-link" asp-page="./ListaReservas"></a>
+        </div>
+    </form>
+</div>

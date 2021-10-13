@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Parqueadero.App.Dominio;
 
 namespace Parqueadero.App.Persistencia{
@@ -31,7 +32,7 @@ namespace Parqueadero.App.Persistencia{
 
         public IEnumerable<EspacioParqueadero> getAllEspacioParqueadero()
         {
-            return _contexto. EspacioParqueaderos;
+            return _contexto.EspacioParqueaderos;
         }
 
         public EspacioParqueadero getEspacioParqueadero(int Id)

@@ -30,7 +30,7 @@ namespace Parqueadero.App.Persistencia{
 
         public IEnumerable<TipoVehiculo> getAllTipoVehiculo()
         {
-            return _contexto. TipoVehiculos;
+            return _contexto.TipoVehiculos;
         }
 
         public TipoVehiculo getTipoVehiculo(int Id)

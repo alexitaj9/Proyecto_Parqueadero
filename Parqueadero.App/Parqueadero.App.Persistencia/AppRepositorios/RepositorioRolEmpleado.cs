@@ -30,7 +30,7 @@ namespace Parqueadero.App.Persistencia{
 
         public IEnumerable<RolEmpleado> getAllRolEmpleado()
         {
-            return _contexto. RolEmpleados;
+            return _contexto.RolEmpleados;
         }
 
         public RolEmpleado getRolEmpleado(int Id)
