@@ -30,8 +30,8 @@
   @foreach (var vehiculo in Model.vehiculos)
   {
     <tr>
-      <td>@vehiculo.propietario</td>
-      <td>@vehiculo.tipoVehiculo</td>
+      <td>@vehiculo.propietario.nombre</td>
+      <td>@vehiculo.tipoVehiculo.nombre</td>
       <td>@vehiculo.placa</td>
       <td>@vehiculo.marca</td>
       <td>@vehiculo.modelo</td>

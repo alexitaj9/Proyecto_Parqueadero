@@ -67,6 +67,8 @@ namespace Parqueadero.App.Frontend.Pages
                     vehiculo.propietario=propietario;
                     vehiculo.tipoVehiculo=tipoVehiculo;
 
+                    //Console.WriteLine(propietario.nombre);
+
                     repositorioVehiculo.editVehiculo(vehiculo);
                     return RedirectToPage("./ListaVehiculos");
                 }

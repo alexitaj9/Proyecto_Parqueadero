@@ -22,12 +22,12 @@
         <div class="row">
             <div class="col form-group">
                 <label asp-for="vehiculo.placa" class="form-control">Placa</label>
-                <input class="form-control" asp-for="vehiculo.placa" type="text" placeholder="placa">
+                <input class="form-control" asp-for="vehiculo.placa" type="text" placeholder="placa" required>
                 <span class="text-danger" asp-validation-for="vehiculo.placa"></span>
             </div>
             <div class="col form-group">
                 <label asp-for="vehiculo.marca" class="form-control">Marca</label>
-                <input class="form-control" asp-for="vehiculo.marca" type="text" placeholder="marca">
+                <input class="form-control" asp-for="vehiculo.marca" type="text" placeholder="marca" required>
                 <span class="text-danger" asp-validation-for="vehiculo.marca"></span>
 
             </div>
@@ -35,24 +35,28 @@
         <div class="row">
             <div class="col form-group">
                 <label asp-for="vehiculo.color" class="form-control">Color</label>
-                <input class="form-control" asp-for="vehiculo.color" type="text" placeholder="color">
+                <input class="form-control" asp-for="vehiculo.color" type="text" placeholder="color" required>
                 <span class="text-danger" asp-validation-for="vehiculo.color"></span>
             </div>
 
         </div>
         <div class="form-group">
             <label asp-for="vehiculo.modelo" class="form-control">Modelo</label>
-            <input class="form-control" asp-for="vehiculo.modelo" type="text" placeholder="modelo">
+            <input class="form-control" asp-for="vehiculo.modelo" type="text" placeholder="modelo" required>
             <span class="text-danger" asp-validation-for="vehiculo.modelo"></span>
         </div>
         <div class="form-group">
             <label asp-for="vehiculo.observaciones" class="form-control">Observaciones</label>
-            <input class="form-control" asp-for="vehiculo.observaciones" type="text" placeholder="observaciones">
+            <input class="form-control" asp-for="vehiculo.observaciones" type="text" placeholder="observaciones" required>
             <span class="text-danger" asp-validation-for="vehiculo.observaciones"></span>
         </div>
 
         <div class="form-group">
             <button class="btn btn-block btn-primary" type="submit">Crear Vehiculo</button>
+            <a class="btn btn-block btn-link" asp-page="./ListaVehiculos"></a>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-block btn-primary" >Cancelar</button>
             <a class="btn btn-block btn-link" asp-page="./ListaVehiculos"></a>
         </div>
     </form>

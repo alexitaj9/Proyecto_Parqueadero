@@ -30,8 +30,14 @@ namespace Parqueadero.App.Frontend.Pages
           
         public void OnGet()
         {   
-            //Objeto Modelo
+            try{
+                //Objeto Modelo
             vehiculos = repositorioVehiculo.getAllVehiculo(); 
+            }
+            catch(NullReferenceException ex){
+                Console.WriteLine(ex);
+            }
+            
         }
 
       

@@ -1,5 +1,6 @@
 ﻿@page
 @model Parqueadero.App.Frontend.Pages.VerVehiculoModel
+@using Parqueadero.App.Dominio
 @{
 }
 
@@ -20,6 +21,7 @@
         <form method="POST" id="formUpdate">
             <div class="row">
                 <div class="col form-group">
+                    <input hidden asp-for="vehiculo.id"/>
                     <input class="form-control" asp-for="vehiculo.modelo" type="text"  placeholder="modelo">
                     <span class="text-danger" asp-validation-for="vehiculo.modelo"></span>
                 </div>   
@@ -40,8 +42,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col form-group">
-                    <input class="form-control" asp-for="vehiculo.propietario" placeholder="Propietario">
+                <div class="col form-group">                    
+                    <select class="form-control" asp-for="idPropietarios" asp-items="@Model.propietarios"></select>
                     <span class="text-danger" asp-validation-for="vehiculo.propietario"></span>
                 </div>  
                 <div class="col form-group">
@@ -50,8 +52,8 @@
                 </div> 
             </div>
             <div class="form-group">
-                <input class="form-control" asp-for="vehiculo.tipoVehiculo" placeholder="tipoVehiculo">
-                <span class="text-danger" asp-validation-for="vehiculo.tipoVehiculo"></span>
+                <label asp-for="idTipoVehiculos" class="form-control">Tipo Vehiculo</label>
+                <select class="form-control" asp-for="idTipoVehiculos" asp-items="@Model.tipoVehiculo"></select>                
             </div>
             
             <div class="form-group">
