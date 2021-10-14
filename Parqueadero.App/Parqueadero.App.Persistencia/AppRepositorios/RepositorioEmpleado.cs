@@ -1,19 +1,28 @@
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using Parqueadero.App.Dominio;
 
+
 namespace Parqueadero.App.Persistencia{
     public class RepositorioEmpleado : IRepositorioEmpleado
     {
+        //Instancia contexto
         private readonly AppContext _contexto;
 
+        //Constructor
         public RepositorioEmpleado(AppContext contexto){
             this._contexto = contexto;
         }
+
+        //Metodo agregar empleado
         public Empleado addEmpleado(Empleado Empleado)
-        {
+        {   
+            //Create employee
             Empleado EmpleadoNueva = _contexto.Add(Empleado).Entity;
             _contexto.SaveChanges();
+
+            //Retorno
             return EmpleadoNueva;
         }
 
@@ -35,7 +44,7 @@ namespace Parqueadero.App.Persistencia{
 
         public IEnumerable<Empleado> getAllEmpleado()
         {
-            return _contexto.Empleados;
+            return _contexto.Empleados.Include("rolEmpleado");
         }
 
         public Empleado getEmpleado(int Id)
