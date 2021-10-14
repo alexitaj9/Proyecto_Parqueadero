@@ -3,46 +3,57 @@
 @{
 }
 
-<nav class="navbar navbar-dark bg-primary shadow" id="navigationBar">
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white p-4">
+  <a class="btn btn-block btn-primary" data-toggle="modal" data-target="#formRegistroPropietario">Agregar Cliente</a>
+</div>
+
+<!-- Page content -->
+<div class="page-content">
+  <nav class="navbar navbar-dark bg-primary shadow" id="navigationBar">
+    <button class="navbar-toggler text-white" id="sidebarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
     <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
+          <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
         </li>
     </ul>
-</nav>
+  </nav>
 
-<a class="btn btn-primary" data-toggle="modal" data-target="#formRegistroPropietario">Agregar Propietario</a>
-
-<table class="table my-4">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Identificación</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Fecha de nacimiento</th>
-      <th scope="col">Dirección</th>
-      <th scope="col">Telefono</th>
-      <th scope="col">Correo</th>
-      <th scope="col">Acciones</th>
-    </tr>
-  </thead>
-  @foreach(var propietario in Model.propietarios) {
-    <tr>
-        <td>@propietario.identificacion</td>
-        <td>@propietario.nombre</td>
-        <td>@propietario.apellidos</td>
-        <td>@propietario.fechaNacimiento</td>
-        <td>@propietario.direccion</td>
-        <td>@propietario.telefono</td>
-        <td>@propietario.correo</td>
-        <td>
-          <a class="btn btn-block btn-primary table-btn" asp-page="./VerPropietario" asp-route-id="@propietario.id">Editar</a>
-          <a class="btn btn-block btn-danger table-btn text-white" asp-page="./EliminarPropietario" asp-route-id="@propietario.id">Eliminar</a>
-        </td>
-    </tr>
-  }
-</table>
+  <div class="container-fluid p-4">
+    <table class="table my-4">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Identificación</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Fecha de nacimiento</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      @foreach(var propietario in Model.propietarios) {
+        <tr>
+            <td>@propietario.identificacion</td>
+            <td>@propietario.nombre</td>
+            <td>@propietario.apellidos</td>
+            <td>@propietario.fechaNacimiento</td>
+            <td>@propietario.direccion</td>
+            <td>@propietario.telefono</td>
+            <td>@propietario.correo</td>
+            <td>
+              <a class="btn btn-block btn-primary table-btn" asp-page="./VerPropietario" asp-route-id="@propietario.id">Editar</a>
+              <a class="btn btn-block btn-danger table-btn text-white" asp-page="./EliminarPropietario" asp-route-id="@propietario.id">Eliminar</a>
+            </td>
+        </tr>
+      }
+    </table>
+  </div>
+</div>
 
 <!--Modal para registrar propietarios-->
 <div class="modal modal-fade" id="formRegistroPropietario" tabindex="-1" >

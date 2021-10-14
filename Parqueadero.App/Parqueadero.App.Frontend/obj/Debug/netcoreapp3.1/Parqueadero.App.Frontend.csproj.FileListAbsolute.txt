@@ -239,3 +239,6 @@ D:\Projects\MTReto9\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Fronten
 D:\Projects\MTReto9\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Parqueadero.App.Frontend.genruntimeconfig.cache
 D:\Projects\MTReto9\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Home.cshtml.g.cs
 D:\Projects\MTReto9\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorPropietarios\EliminarPropietario.cshtml.g.cs
+D:\Projects\MTReto9\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorEmpleados\ListaEmpleados.cshtml.g.cs
+D:\Projects\MTReto9\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorEmpleados\EliminarEmpleado.cshtml.g.cs
+D:\Projects\MTReto9\Proyecto_Parqueadero\Parqueadero.App\Parqueadero.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\GestorEmpleados\VerEmpleado.cshtml.g.cs
