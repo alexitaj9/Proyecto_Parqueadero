@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Parqueadero.App.Dominio;
 
 namespace Parqueadero.App.Persistencia{
@@ -36,7 +37,7 @@ namespace Parqueadero.App.Persistencia{
 
         public IEnumerable<Reserva> getAllReserva()
         {
-            return _contexto. Reservas;
+            return _contexto.Reservas.Include("propietario").Include("vehiculo").Include("espacioParqueadero");
         }
 
         public Reserva getReserva(int Id)
@@ -46,7 +47,7 @@ namespace Parqueadero.App.Persistencia{
 
         public void removeReserva(int Id)
         {
-            Reserva Reserva = _contexto.Reservas.FirstOrDefault(a => a.id == Id);
+            Reserva Reserva = _contexto.Reservas.Include("propietario").Include("vehiculo").Include("espacioParqueadero").FirstOrDefault(a => a.id == Id);
             if(Reserva != null){
                 _contexto.Reservas.Remove(Reserva);
                 _contexto.SaveChanges();

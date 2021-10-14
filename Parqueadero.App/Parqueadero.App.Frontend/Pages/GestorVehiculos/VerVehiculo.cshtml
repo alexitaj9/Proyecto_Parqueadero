@@ -1,0 +1,64 @@
+﻿@page
+@model Parqueadero.App.Frontend.Pages.VerVehiculoModel
+@using Parqueadero.App.Dominio
+@{
+}
+
+<nav class="navbar navbar-dark bg-primary shadow" id="navigationBar">
+    <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
+        </li>
+    </ul>
+</nav>
+
+<section>
+    <div class="container bg-white my-4 p-4 shadow">
+        <header class="text-center text-primary mb-4">
+            <h1>Editar Vehiculo</h1>
+        </header>
+        <form method="POST" id="formUpdate">
+            <div class="row">
+                <div class="col form-group">
+                    <input hidden asp-for="vehiculo.id"/>
+                    <input class="form-control" asp-for="vehiculo.modelo" type="text"  placeholder="modelo">
+                    <span class="text-danger" asp-validation-for="vehiculo.modelo"></span>
+                </div>   
+                <div class="col form-group">
+                    <input class="form-control" asp-for="vehiculo.placa" type="text" placeholder="placa">
+                    <span class="text-danger" asp-validation-for="vehiculo.placa"></span>
+                </div> 
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <input class="form-control" asp-for="vehiculo.color" type="text" placeholder="color">
+                    <span class="text-danger" asp-validation-for="vehiculo.color"></span>
+                </div>
+                <div class="col form-group">
+                    <input class="form-control" asp-for="vehiculo.marca" type="text"  placeholder="marca">
+                    <span class="text-danger" asp-validation-for="vehiculo.marca"></span>
+        
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group">                    
+                    <select class="form-control" asp-for="idPropietarios" asp-items="@Model.propietarios"></select>
+                    <span class="text-danger" asp-validation-for="vehiculo.propietario"></span>
+                </div>  
+                <div class="col form-group">
+                    <input class="form-control" asp-for="vehiculo.observaciones" type="text" placeholder="observaciones">
+                    <span class="text-danger" asp-validation-for="vehiculo.observaciones"></span>
+                </div> 
+            </div>
+            <div class="form-group">
+                <label asp-for="idTipoVehiculos" class="form-control">Tipo Vehiculo</label>
+                <select class="form-control" asp-for="idTipoVehiculos" asp-items="@Model.tipoVehiculo"></select>                
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Actualizar información</button>
+            </div>
+        </form>
+    </div>
+</section>

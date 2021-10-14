@@ -7,7 +7,7 @@ namespace Parqueadero.App.Persistencia{
         IEnumerable<Vehiculo> getAllVehiculo();
         Vehiculo addVehiculo(Vehiculo vehiculo);
         Vehiculo editVehiculo(Vehiculo vehiculo);
-        Vehiculo getVehiculo(int Id);
-        void removeVehiculo(int Id);
+        Vehiculo getVehiculo(int id);
+        void removeVehiculo(int id);
     }
 }

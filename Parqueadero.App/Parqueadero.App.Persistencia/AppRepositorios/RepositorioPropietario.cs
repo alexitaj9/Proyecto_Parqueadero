@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Parqueadero.App.Dominio;
@@ -23,6 +24,7 @@ namespace Parqueadero.App.Persistencia{
         //Editar propietario
         public Propietario editPropietario(Propietario Propietario)
         {   
+            Console.WriteLine(Propietario.id);
             //Capturar
             Propietario PropietarioAEditar = _contexto.Propietarios.FirstOrDefault(p => p.id == Propietario.id);
             

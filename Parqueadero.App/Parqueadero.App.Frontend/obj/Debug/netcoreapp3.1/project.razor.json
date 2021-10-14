@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Parqueadero.App.Frontend.csproj",
+  "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Parqueadero.App.Frontend.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14402,73 +14402,108 @@
   "RootNamespace": "Parqueadero.App.Frontend",
   "Documents": [
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\CrearPropietario.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\CrearPropietario.cshtml",
       "TargetPath": "Pages\\GestorPropietarios\\CrearPropietario.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Index.cshtml",
-      "TargetPath": "Pages\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Shared\\_Layout.cshtml",
-      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Privacy.cshtml",
-      "TargetPath": "Pages\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\VerPropietario.cshtml",
-      "TargetPath": "Pages\\GestorPropietarios\\VerPropietario.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\InicioSesion\\ListaInicioSesion.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\InicioSesion\\ListaInicioSesion.cshtml",
       "TargetPath": "Pages\\InicioSesion\\ListaInicioSesion.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\EditarPropietario.cshtml",
-      "TargetPath": "Pages\\GestorPropietarios\\EditarPropietario.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorReservas\\EliminarReserva.cshtml",
+      "TargetPath": "Pages\\GestorReservas\\EliminarReserva.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorVehiculos\\ListaVehiculos.cshtml",
-      "TargetPath": "Pages\\GestorVehiculos\\ListaVehiculos.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorVehiculos\\EliminarVehiculo.cshtml",
+      "TargetPath": "Pages\\GestorVehiculos\\EliminarVehiculo.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\_ViewStart.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorVehiculos\\VerVehiculo.cshtml",
+      "TargetPath": "Pages\\GestorVehiculos\\VerVehiculo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\VerPropietario.cshtml",
+      "TargetPath": "Pages\\GestorPropietarios\\VerPropietario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorReservas\\CrearReserva.cshtml",
+      "TargetPath": "Pages\\GestorReservas\\CrearReserva.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorReservas\\ListaReservas.cshtml",
-      "TargetPath": "Pages\\GestorReservas\\ListaReservas.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Index.cshtml",
+      "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\ListaPropietarios.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorVehiculos\\CrearVehiculo.cshtml",
+      "TargetPath": "Pages\\GestorVehiculos\\CrearVehiculo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorVehiculos\\ListaVehiculos.cshtml",
+      "TargetPath": "Pages\\GestorVehiculos\\ListaVehiculos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\EliminarPropietario.cshtml",
+      "TargetPath": "Pages\\GestorPropietarios\\EliminarPropietario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorPropietarios\\ListaPropietarios.cshtml",
       "TargetPath": "Pages\\GestorPropietarios\\ListaPropietarios.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorReservas\\ListaReservas.cshtml",
+      "TargetPath": "Pages\\GestorReservas\\ListaReservas.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Shared\\_Layout.cshtml",
+      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Privacy.cshtml",
+      "TargetPath": "Pages\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\Home.cshtml",
+      "TargetPath": "Pages\\Home.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Parqueadero\\Proyecto_Parqueadero\\Proyecto_Parqueadero\\Parqueadero.App\\Parqueadero.App.Frontend\\Pages\\GestorReservas\\VerReserva.cshtml",
+      "TargetPath": "Pages\\GestorReservas\\VerReserva.cshtml",
       "FileKind": "mvc"
     }
   ],

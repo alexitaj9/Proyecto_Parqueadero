@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Parqueadero.App.Dominio;
 
 namespace Parqueadero.App.Persistencia{
@@ -36,17 +37,17 @@ namespace Parqueadero.App.Persistencia{
 
         public IEnumerable<Vehiculo> getAllVehiculo()
         {
-            return _contexto. Vehiculos;
+            return _contexto.Vehiculos.Include("propietario").Include("tipoVehiculo");
         }
 
-        public Vehiculo getVehiculo(int Id)
+        public Vehiculo getVehiculo(int id)
         {
-            return _contexto.Vehiculos.FirstOrDefault(a => a.id == Id);
+            return _contexto.Vehiculos.FirstOrDefault(a => a.id == id);
         }
 
-        public void removeVehiculo(int Id)
+        public void removeVehiculo(int id)
         {
-            Vehiculo Vehiculo = _contexto.Vehiculos.FirstOrDefault(a => a.id == Id);
+            Vehiculo Vehiculo = _contexto.Vehiculos.Include("propietario").Include("tipoVehiculo").FirstOrDefault(a => a.id == id);
             if(Vehiculo != null){
                 _contexto.Vehiculos.Remove(Vehiculo);
                 _contexto.SaveChanges();
