@@ -5,43 +5,114 @@
 @{
 }
 
-
-<nav class="navbar navbar-dark bg-primary shadow" id="navigationBar">
-  <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
-    </li>
-  </ul>
+<!--Navbar-->
+<nav class="navbar navbar-dark bg-primary shadow">
+    <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
+        </li>
+    </ul>
 </nav>
 
-<a class="btn btn-primary" asp-page="./CrearReserva">Agregar Reserva</a>
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-light p-4 position-fixed border-right border-primary">
+    <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#formRegistroReserva">
+        <i class="fas fa-calendar-alt mr-2"></i>Agregar Reserva
+    </button>
+</div>
 
-<table class="table my-4">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Propietario</th>
-      <th scope="col">Vehiculo</th>
-      <th scope="col">Espacio de Parqueadero</th>
-      <th scope="col">Fecha reserva</th>
-      <th scope="col">Fecha inicio reserva</th>
-      <th scope="col">Fecha fin reserva</th>      
-    </tr>
-  </thead>
-  @foreach (var reserva in Model.reservas)
-  {
-    <tr>
-      <td>@reserva.propietario.nombre</td>
-      <td>@reserva.vehiculo.placa</td>
-      <td>@reserva.espacioParqueadero</td>
-      <td>@reserva.fechaReserva</td>
-      <td>@reserva.inicioReserva</td>
-      <td>@reserva.finReserva</td>      
-      <td>
-        <a class="btn btn-block btn-primary table-btn" asp-page="./VerReserva" asp-route-id="@reserva.id">Editar</a>        
-        <a class="btn btn-block btn-danger table-btn text-white" asp-page="./EliminarReserva"
-        asp-route-id="@reserva.id">Eliminar</a>
-      </td>
-    </tr>
-  }
-</table>
+<!-- Page content -->
+<div class="page-content">
+    <!--Button collapse-->
+    <button class="sidebarCollapse btn btn-light btn-sm border-left-0 border-primary position-fixed">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!--Aqui poner contenido-->
+    <div class="container-fluid p-4">
+        <div class="table-responsive">
+            <table class="table table-striped my-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Propietario</th>
+                        <th scope="col">Vehiculo</th>
+                        <th scope="col">Espacio de Parqueadero</th>
+                        <th scope="col">Fecha reserva</th>
+                        <th scope="col">Fecha inicio reserva</th>
+                        <th scope="col">Fecha fin reserva</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                @foreach (var reserva in Model.reservas) {
+                    <tr>
+                        <td>@reserva.propietario</td>
+                        <td>@reserva.vehiculo.placa</td>
+                        <td>@reserva.espacioParqueadero</td>
+                        <td>@reserva.fechaReserva</td>
+                        <td>@reserva.inicioReserva</td>
+                        <td>@reserva.finReserva</td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-primary" asp-page="./VerReserva" asp-route-id="@reserva.id">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a class="btn btn-danger" asp-page="./EliminarReserva" asp-route-id="@reserva.id">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--Modal para registrar propietarios-->
+<div class="modal modal-fade" id="formRegistroReserva" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrar de Reservas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col form-group">
+                            <label asp-for="propietarioId">Propietario</label>
+                            <select class="form-control" asp-for="propietarioId" asp-items="@Model.propietarios"></select>              
+                        </div>    
+                        <div class="col form-group">
+                            <label asp-for="vehiculoId">Vehiculo</label>
+                            <select class="form-control" asp-for="vehiculoId" asp-items="@Model.vehiculos"></select>                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="espacioParqueaderoId">Espacio Parqueo</label>
+                        <select class="form-control" asp-for="espacioParqueaderoId" asp-items="@Model.espaciosParqueadero"></select>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label asp-for="nuevaReserva.inicioReserva">Hora Inicio Reserva</label>
+                            <input class="form-control" asp-for="nuevaReserva.inicioReserva" type="time" min="05:00:00" max="23:59:00" placeholder="Hora Inicio de Reserva" required>
+                            <span class="text-danger" asp-validation-for="nuevaReserva.inicioReserva"></span>
+                        </div>
+                        <div class="col form-group">
+                            <label asp-for="nuevaReserva.finReserva">Hora Final Reserva</label>
+                            <input class="form-control" asp-for="nuevaReserva.finReserva" type="time" min="05:00:00" max="23:59:00" placeholder="Hora Final de Reserva" required>
+                            <span class="text-danger" asp-validation-for="nuevaReserva.finReserva"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-primary" type="submit">Crear Reserva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

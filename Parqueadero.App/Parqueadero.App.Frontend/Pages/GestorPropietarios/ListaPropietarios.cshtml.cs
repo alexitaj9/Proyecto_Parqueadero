@@ -17,12 +17,14 @@ namespace Parqueadero.App.Frontend.Pages
         //Propiedades
         public IEnumerable<Propietario> propietarios { get; set; }
         public Propietario nuevoPropietario { get; set; }
-        public Propietario editarPropietario { get; set; }
 
         //Constructor
         public ListaPropietariosModel(IRepositorioPropietario repositorioPropietario){
             //Asignacion
             this.repositorioPropietario = repositorioPropietario;
+
+            //Crear objeto
+            nuevoPropietario = new Propietario();
         }
         
         //Get Propietarios

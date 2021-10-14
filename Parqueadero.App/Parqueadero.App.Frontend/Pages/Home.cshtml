@@ -19,34 +19,37 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Propietarios</h1>
-                        <p class="card-text">Datos de propietarios</p>
+                        <p class="card-text">Lista de Propietarios</p>
                     </div>
                 </div>
             </a>
-            <div class="card">
-                <a asp-page="/GestorVehiculos/ListaVehiculos">
-                    
-                        <div class="card-body">
-                            <h1 class="card-title">Vehiculos</h1>
-                            <p class="card-text">Datos Vehiculos</p>
-                        </div>
-                    
-                </a>
-           </div>
-            <div class="card">
-                <a asp-page="/GestorReservas/ListaReservas">
+
+            <a asp-page="/GestorVehiculos/ListaVehiculos">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Vehiculos</h1>
+                        <p class="card-text">Lista de Vehiculos</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a asp-page="/GestorReservas/ListaReservas">
+                <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Reservas</h1>
-                        <p class="card-text">En construcción</p>
+                        <p class="card-text">Lista de Reservas</p>
                     </div>
-                </a>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title">Perfil</h1>
-                    <p class="card-text">En construcción</p>
                 </div>
-            </div>
+            </a>
+
+            <a asp-page="/GestorEmpleados/ListaEmpleados">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Empleados</h1>
+                        <p class="card-text">Lista de Empleados</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </section>

@@ -27,7 +27,7 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  background-color: #f4f4f4 !important;
+  background-color: #e5e5e5 !important;
   font-size: 14px;
 }
 @media (min-width: 768px) {
@@ -37,7 +37,7 @@ html {
 }
 
 .body {
-  background-color: #f4f4f4 !important;
+  background-color: #e5e5e5 !important;
 }
 
 .border-top {
@@ -69,6 +69,7 @@ html {
 
 body {
   /* Margin bottom by footer height */
+  background-color: #e5e5e5 !important;
   margin-bottom: 60px;
 }
 .footer {
@@ -77,4 +78,8 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+.table {
+  vertical-align: middle;
 }

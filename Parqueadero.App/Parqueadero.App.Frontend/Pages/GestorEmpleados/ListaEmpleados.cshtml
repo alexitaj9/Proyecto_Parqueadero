@@ -3,56 +3,68 @@
 @{
 }
 
+<!--Navbar-->
+<nav class="navbar navbar-dark bg-primary shadow">
+    <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
+        </li>
+    </ul>
+</nav>
+
 <!-- Vertical navbar -->
-<div class="vertical-nav bg-dark p-4">
-    <a class="btn btn-block btn-success" data-toggle="modal" data-target="#formRegistroEmpleado">Agregar Empleado</a>
+<div class="vertical-nav bg-light p-4 position-fixed border-right border-primary">
+    <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#formRegistroEmpleado">
+        <i class="fas fa-user-plus mr-2"></i>Agregar Empleado
+    </button>
 </div>
 
 <!-- Page content -->
 <div class="page-content">
-    <nav class="navbar navbar-dark bg-primary shadow" id="navigationBar">
-        <button class="navbar-toggler text-white" id="sidebarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
-            </li>
-        </ul>
-    </nav>
-
+    <!--Button collapse-->
+    <button class="sidebarCollapse btn btn-light btn-sm border-left-0 border-primary position-fixed">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    
+    <!--Aqui poner contenido-->
     <div class="container-fluid p-4">
-        <table class="table my-4">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Identificación</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Tipo Empleado</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            @foreach (var empleado in Model.empleados)
-            {
-                <tr>
-                    <td>@empleado.identificacion</td>
-                    <td>@empleado.nombre</td>
-                    <td>@empleado.apellidos</td>
-                    <td>@empleado.rolEmpleado.nombre</td>
-                    <td>@empleado.telefono</td>
-                    <td>@empleado.correo</td>
-                    <td>
-                        <a class="btn btn-block btn-primary table-btn" asp-page="./VerEmpleado"
-                        asp-route-id="@empleado.id">Editar</a>
-                        <a class="btn btn-block btn-danger table-btn text-white" asp-page="./EliminarEmpleado"
-                        asp-route-id="@empleado.id">Eliminar</a>
-                    </td>
-                </tr>
-            }
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped my-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Identificación</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Tipo Empleado</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                @foreach (var empleado in Model.empleados)
+                {
+                    <tr>
+                        <td>@empleado.identificacion</td>
+                        <td>@empleado.nombre</td>
+                        <td>@empleado.apellidos</td>
+                        <td>@empleado.rolEmpleado.nombre</td>
+                        <td>@empleado.telefono</td>
+                        <td>@empleado.correo</td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-primary" asp-page="./VerEmpleado" asp-route-id="@empleado.id">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a class="btn btn-danger" asp-page="./EliminarEmpleado" asp-route-id="@empleado.id">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
     </div>
 </div>
 
@@ -70,47 +82,49 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col form-group">
+                            <label for="nuevoEmpleado.nombre">Nombre</label>
                             <input class="form-control" asp-for="nuevoEmpleado.nombre" type="text" placeholder="Nombre">
                             <span class="text-danger" asp-validatio-for="nuevoEmpleado.nombre"></span>
                         </div>
                         <div class="col form-group">
-                            <input class="form-control" asp-for="nuevoEmpleado.apellidos" type="text"
-                                placeholder="Apellidos">
+                            <label for="nuevoEmpleado.apellidos">Apellidos</label>
+                            <input class="form-control" asp-for="nuevoEmpleado.apellidos" type="text" placeholder="Apellidos">
                             <span class="text-danger" asp-validation-for="nuevoEmpleado.apellidos"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col form-group">
-                            <input class="form-control" asp-for="nuevoEmpleado.identificacion" type="text"
-                                placeholder="Identificación">
+                            <label for="nuevoEmpleado.identificacion">Identificación</label>
+                            <input class="form-control" asp-for="nuevoEmpleado.identificacion" type="text" placeholder="Identificación">
                             <span class="text-danger" asp-validation-for="nuevoEmpleado.identificacion"></span>
                         </div>
                         <div class="col form-group">
-                            <select class="custom-select" asp-for="rolEmpleadoId" asp-items="Model.rolEmpleados" placeholder="Tipo empleado"></select>
-                            <span class="text-danger" asp-validation-for="rolEmpleadoId"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col form-group">
-                            <input class="form-control" asp-for="nuevoEmpleado.telefono" type="text"
-                                placeholder="Teléfono">
+                            <label for="nuevoEmpleado.telefono">Teléfono</label>
+                            <input class="form-control" asp-for="nuevoEmpleado.telefono" type="text" placeholder="Teléfono">
                             <span class="text-danger" asp-validation-for="nuevoEmpleado.telefono"></span>
-                        </div>
-                        <div class="col form-group">
-                            <input class="form-control" asp-for="nuevoEmpleado.correo" type="email"
-                                placeholder="Correo electrónico">
-                            <span class="text-danger" asp-validation-for="nuevoEmpleado.correo"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" asp-for="nuevoEmpleado.clave" type="password"
-                            placeholder="Contraseña">
-                        <span class="text-danger" asp-validation-for="nuevoEmpleado.clave"></span>
+                        <label for="Model.rolEmpleados">Tipo Empleado</label>
+                        <select class="custom-select" asp-for="rolEmpleadoId" asp-items="Model.rolEmpleados" placeholder="Tipo empleado"></select>
+                        <span class="text-danger" asp-validation-for="rolEmpleadoId"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="nuevoEmpleado.correo">Correo</label>
+                            <input class="form-control" asp-for="nuevoEmpleado.correo" type="email" placeholder="Correo electrónico">
+                            <span class="text-danger" asp-validation-for="nuevoEmpleado.correo"></span>
+                        </div>
+                        <div class="col form-group">
+                            <label for="nuevoEmpleado.clave">Contraseña</label>
+                            <input class="form-control" asp-for="nuevoEmpleado.clave" type="password" placeholder="Contraseña">
+                            <span class="text-danger" asp-validation-for="nuevoEmpleado.clave"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Registrar Empleado</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-primary" type="submit" >Registrar Empleado</button>
                 </div>
             </form>
         </div>

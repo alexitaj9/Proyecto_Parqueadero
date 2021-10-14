@@ -17,31 +17,33 @@ namespace Parqueadero.App.Frontend.Pages
         private IRepositorioPropietario repositorioPropietario;
         private IRepositorioTipoVehiculo repositorioTipoVehiculo;
 
-        //Propietarios
-        public Vehiculo vehiculo { get; set; }
-
-        public int idPropietarios { get; set; }
-        public int idTipoVehiculos { get; set; }
+        //Propiedades
         public List<SelectListItem> propietarios { get; set; }
-        public List<SelectListItem> tipoVehiculo { get; set; }
+        public int propietarioId { get; set; }
+        public List<SelectListItem> tipoVehiculos { get; set; }
+        public int tipoVehiculoId { get; set; }
+        public Vehiculo vehiculo { get; set; }
 
         //Constructor
         public VerVehiculoModel(IRepositorioVehiculo repositorioVehiculo, IRepositorioPropietario repositorioPropietario, IRepositorioTipoVehiculo repositorioTipoVehiculo)
         {
+            //Asignar
             this.repositorioVehiculo = repositorioVehiculo;
             this.repositorioPropietario = repositorioPropietario;
             this.repositorioTipoVehiculo = repositorioTipoVehiculo;
-
+            
+            //Crear objeto
             vehiculo = new Vehiculo();
 
+            //Listas
             propietarios = repositorioPropietario.getAllPropietario().Select(
-                m => new SelectListItem{
-                    Text = m.nombre,
-                    Value = Convert.ToString(m.id)
+                p => new SelectListItem{
+                    Text = p.nombre,
+                    Value = Convert.ToString(p.id)
                 }
             ).ToList();
 
-            tipoVehiculo = repositorioTipoVehiculo.getAllTipoVehiculo().Select(
+            tipoVehiculos = repositorioTipoVehiculo.getAllTipoVehiculo().Select(
                 m => new SelectListItem{
                     Text = m.nombre,
                     Value = Convert.ToString(m.id)
@@ -56,30 +58,24 @@ namespace Parqueadero.App.Frontend.Pages
         }
 
         //Request POST
-        public IActionResult OnPost(Vehiculo vehiculo, int idPropietarios, int idTipoVehiculos)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    Propietario propietario = repositorioPropietario.getPropietario(idPropietarios);
-                    TipoVehiculo tipoVehiculo = repositorioTipoVehiculo.getTipoVehiculo(idTipoVehiculos);
-
+        public IActionResult OnPost(Vehiculo vehiculo, int propietarioId, int tipoVehiculoId) {
+            if (ModelState.IsValid) {
+                try {
+                    //Capturar
+                    Propietario propietario = repositorioPropietario.getPropietario(propietarioId);
+                    TipoVehiculo tipoVehiculo = repositorioTipoVehiculo.getTipoVehiculo(tipoVehiculoId);
                     
                     //Actualizar
-                    
-                    vehiculo.propietario=propietario;
-                    vehiculo.tipoVehiculo=tipoVehiculo;
+                    vehiculo.propietario = propietario;
+                    vehiculo.tipoVehiculo = tipoVehiculo;
 
+                    //Editar vehiculo
                     repositorioVehiculo.editVehiculo(vehiculo);
-
-                    //Console.WriteLine(vehiculoactualizado);
 
                     //Redireccion
                     return RedirectToPage("./ListaVehiculos");
                 }
-                catch
-                {
+                catch {
                     //Redireccion
                     return RedirectToPage("../Error");
                 }

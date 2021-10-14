@@ -21,44 +21,53 @@
             <div class="row">
                 <div class="col form-group">
                     <input hidden asp-for="propietario.id"/>
+                    <label for="propietario.nombre">Nombre</label>
                     <input class="form-control" asp-for="propietario.nombre" type="text" placeholder="Nombre">
                     <span class="text-danger" asp-validation-for="propietario.nombre"></span>
                 </div>
                 <div class="col form-group">
+                    <label for="propietario.apellidos">Apellidos</label>
                     <input class="form-control" asp-for="propietario.apellidos" type="text" placeholder="Apellidos">
                     <span class="text-danger" asp-validation-for="propietario.apellidos"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="col form-group">
+                    <label for="propietario.identificacion">Identificación</label>
                     <input class="form-control" asp-for="propietario.identificacion" type="text"
                         placeholder="Identificación">
                     <span class="text-danger" asp-validation-for="propietario.identificacion"></span>
                 </div>
                 <div class="col form-group">
+                    <label for="propietario.fechaNacimiento">Fecha Nacimiento</label>
                     <input class="form-control" asp-for="propietario.fechaNacimiento" type="date"
                         placeholder="Fecha de nacimiento">
                     <span class="text-danger" asp-validation-for="propietario.fechaNacimiento"></span>
-
                 </div>
             </div>
             <div class="row">
                 <div class="col form-group">
+                    <label for="propietario.direccion">Dirección</label>
                     <input class="form-control" asp-for="propietario.direccion" placeholder="Dirección">
                     <span class="text-danger" asp-validation-for="propietario.direccion"></span>
                 </div>
                 <div class="col form-group">
+                    <label for="propietario.telefono">Teléfono</label>
                     <input class="form-control" asp-for="propietario.telefono" type="text" placeholder="Teléfono">
                     <span class="text-danger" asp-validation-for="propietario.telefono"></span>
                 </div>
             </div>
-            <div class="form-group">
-                <input class="form-control" asp-for="propietario.correo" type="email" placeholder="Correo electrónico">
-                <span class="text-danger" asp-validation-for="propietario.correo"></span>
-            </div>
-            <div class="form-group">
-                <input class="form-control" asp-for="propietario.clave" type="password" placeholder="Nueva contraseña">
-                <span class="text-danger" asp-validation-for="propietario.clave"></span>
+            <div class="row">
+                <div class="col form-group">
+                    <label for="propietario.correo">Correo Electrónico</label>
+                    <input class="form-control" asp-for="propietario.correo" type="email" placeholder="Correo electrónico">
+                    <span class="text-danger" asp-validation-for="propietario.correo"></span>
+                </div>
+                <div class="col form-group">
+                    <label for="propietario.clave">Contraseña</label>
+                    <input class="form-control" asp-for="propietario.clave" type="password" placeholder="Nueva contraseña">
+                    <span class="text-danger" asp-validation-for="propietario.clave"></span>
+                </div>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit">Actualizar información</button>

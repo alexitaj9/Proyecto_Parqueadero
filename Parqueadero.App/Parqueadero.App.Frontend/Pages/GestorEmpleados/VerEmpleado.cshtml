@@ -21,38 +21,44 @@
             <input class="d-none" asp-for="empleado.id">
             <div class="row">
                 <div class="col form-group">
+                    <label for="empleado.nombre">Nombre</label>
                     <input class="form-control" asp-for="empleado.nombre" type="text"  placeholder="Nombre">
                     <span class="text-danger" asp-validation-for="empleado.nombre"></span>
                 </div>   
                 <div class="col form-group">
+                    <label for="empleado.apellidos">Apellidos</label>
                     <input class="form-control" asp-for="empleado.apellidos" type="text" placeholder="Apellidos">
                     <span class="text-danger" asp-validation-for="empleado.apellidos"></span>
                 </div> 
             </div>
             <div class="row">
                 <div class="col form-group">
+                    <label for="empleado.identificación">Identificación</label>
                     <input class="form-control" asp-for="empleado.identificacion" type="text" placeholder="Identificación">
                     <span class="text-danger" asp-validation-for="empleado.identificacion"></span>
                 </div>
                 <div class="col form-group">
-                    <select class="custom-select" asp-for="rolEmpleadoId" asp-items="Model.rolEmpleados" placeholder="Tipo empleado"></select>
-                    <span class="text-danger" asp-validation-for="rolEmpleadoId"></span>       
-                </div>
-            </div>
-            <div class="row">
-                <div class="col form-group">
+                    <label for="empleado.telefono">Teléfono</label>
                     <input class="form-control" asp-for="empleado.telefono" type="text" placeholder="Teléfono">
                     <span class="text-danger" asp-validation-for="empleado.telefono"></span>
                 </div> 
+            </div>
+            <div class="form-group">
+                <label for="Model.rolEmpleados">Tipo Empleado</label>
+                    <select class="custom-select" asp-for="rolEmpleadoId" asp-items="Model.rolEmpleados" placeholder="Tipo empleado"></select>
+                    <span class="text-danger" asp-validation-for="rolEmpleadoId"></span>       
+            </div>    
+            <div class="row">
                 <div class="col form-group">
+                    <label for="empleado.correo">Correo Electrónico</label>
                     <input class="form-control" asp-for="empleado.correo" type="email"  placeholder="Correo electrónico">
                     <span class="text-danger" asp-validation-for="empleado.correo"></span>
                 </div>
-            </div>
-            
-            <div class="form-group">
-                <input class="form-control" asp-for="empleado.clave" type="password" placeholder="Nueva contraseña">
-                <span class="text-danger" asp-validation-for="empleado.clave"></span>
+                <div class="col form-group">
+                    <label for="empleado.clave">Contraseña</label>
+                    <input class="form-control" asp-for="empleado.clave" type="password" placeholder="Nueva contraseña">
+                    <span class="text-danger" asp-validation-for="empleado.clave"></span>
+                </div>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit">Actualizar información</button>

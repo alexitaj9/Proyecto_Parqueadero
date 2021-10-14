@@ -22,14 +22,14 @@ namespace Parqueadero.App.Persistencia{
         {
             Reserva ReservaAEditar = _contexto.Reservas.FirstOrDefault(a => a.id == Reserva.id);
             if (ReservaAEditar != null){
-                ReservaAEditar.fechaReserva = Reserva.fechaReserva;
+                ReservaAEditar.id = Reserva.id;
+                ReservaAEditar.propietario = Reserva.propietario;
                 ReservaAEditar.espacioParqueadero = Reserva.espacioParqueadero;
+                ReservaAEditar.vehiculo = Reserva.vehiculo;
+                ReservaAEditar.fechaReserva = Reserva.fechaReserva;
+                ReservaAEditar.inicioReserva = Reserva.inicioReserva;
                 ReservaAEditar.fechaReserva = Reserva.fechaReserva;
                 ReservaAEditar.finReserva = Reserva.finReserva; 
-                ReservaAEditar.id = Reserva.id;     
-                ReservaAEditar.inicioReserva = Reserva.inicioReserva;
-                ReservaAEditar.propietario = Reserva.propietario; 
-                ReservaAEditar.vehiculo = Reserva.vehiculo;
                 _contexto.SaveChanges();
             }
             return ReservaAEditar;

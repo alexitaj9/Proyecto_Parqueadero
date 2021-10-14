@@ -1,50 +1,67 @@
-/*Vertical Nav*/
 .vertical-nav {
-    min-width: 17rem;
-    width: 17rem;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s;
-  }
+  width: 17rem;
+  height: 100vh;
+  top: 3.5rem;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
 
-  .vertical-nav.active {
+.vertical-nav.active {
+  margin-left: -17rem;
+  transition: all 0.4s;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+.page-content.active {
+  width: calc(100%);
+  margin-left: 0;
+  transition: all 0.4s;
+}
+
+.sidebarCollapse {
+  left: 16.9rem;
+  top: 4rem;
+  transition: all 0.4s;
+}
+
+.sidebarCollapse.active {
+  left: 0;
+  transition: all 0.4s;
+}
+
+
+@media (max-width: 768px) {
+  .vertical-nav {
     margin-left: -17rem;
   }
 
-  /*Content*/
-  .page-content {
-    width: calc(100% - 17rem);
-    margin-left: 17rem;
-    transition: all 0.4s;
+  .vertical-nav.active {
+    margin-left: 0;
   }
-
-  .page-content.active {
+  
+  .page-content {
     width: 100%;
     margin: 0;
   }
   
-  /*Display*/
-  @media (max-width: 768px) {
-    /**/
-    .vertical-nav {
-      margin-left: -17rem;
-    }
-
-    .vertical-nav.active {
-      margin-left: 0;
-    }
-
-    /*Content*/
-    .page-content {
-      width: 100%;
-      margin: 0;
-    }
-
-    .page-content.active {
-      margin-left: 17rem;
-      width: calc(100% - 17rem);
-    }
+  .page-content.active {
+    margin-left: 0;
+    width: 100%;
   }
+
+  .sidebarCollapse {
+    left: 0;
+    transition: all 0.4s;
+  }
+  
+  .sidebarCollapse.active {
+    margin-left: 16.9rem;
+    transition: all 0.4s;
+  }
+}

@@ -4,7 +4,7 @@
 // Write your Javascript code.
 $(function() {
     // Sidebar toggle behavior
-    $('#sidebarCollapse').on('click', function() {
-        $('.vertical-nav, .page-content').toggleClass('active');
+    $('.sidebarCollapse').on('click', function() {
+        $('.vertical-nav, .page-content, .sidebarCollapse').toggleClass('active');
     });
 });

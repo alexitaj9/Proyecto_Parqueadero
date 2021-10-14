@@ -4,45 +4,127 @@
 @{
 }
 
-<nav class="navbar navbar-dark bg-primary shadow" id="navigationBar">
-  <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
-    </li>
-  </ul>
+<!--Navbar-->
+<nav class="navbar navbar-dark bg-primary shadow">
+    <a class="navbar-brand" asp-page="/Home">Parqueadero</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link text-white" asp-page="/Index">Cerrar sesión</a>
+        </li>
+    </ul>
 </nav>
 
-<a class="btn btn-primary" asp-page="./CrearVehiculo">Agregar Vehiculo</a>
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-light p-4 position-fixed border-right border-primary">
+    <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#formRegistroVehiculo">
+        <i class="fas fa-car mr-2"></i>Agregar Vehiculo
+    </button>
+</div>
 
-<table class="table my-4">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Propietario</th>
-      <th scope="col">Tipo Vehiculo</th>
-      <th scope="col">Placa</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">Color</th>
-      <th scope="col">Observaciones</th>
-    </tr>
-  </thead>
-  @foreach (var vehiculo in Model.vehiculos)
-  {
-    <tr>
-      <td>@vehiculo.propietario.nombre</td>
-      <td>@vehiculo.tipoVehiculo.nombre</td>
-      <td>@vehiculo.placa</td>
-      <td>@vehiculo.marca</td>
-      <td>@vehiculo.modelo</td>
-      <td>@vehiculo.color</td>
-      <td>@vehiculo.observaciones</td>
-      <td>
-        <a class="btn btn-block btn-primary table-btn" asp-page="./VerVehiculo" asp-route-id="@vehiculo.id">Editar</a>        
-        <a class="btn btn-block btn-danger table-btn text-white" asp-page="./EliminarVehiculo"
-        asp-route-id="@vehiculo.id">Eliminar</a>
-      </td>
-    </tr>
-  }
-</table>
+<!-- Page content -->
+<div class="page-content">
+    <!--Button collapse-->
+    <button class="sidebarCollapse btn btn-light btn-sm border-left-0 border-primary position-fixed">
+        <i class="fas fa-chevron-right"></i>
+    </button>
 
+    <!--Aqui poner contenido-->
+    <div class="container-fluid p-4">
+        <div class="table-responsive">
+            <table class="table table-striped my-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Propietario</th>
+                        <th scope="col">Tipo Vehiculo</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Observaciones</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                @foreach (var vehiculo in Model.vehiculos) {
+                    <tr>
+                        <td>@vehiculo.propietario.nombre</td>
+                        <td>@vehiculo.tipoVehiculo.nombre</td>
+                        <td>@vehiculo.placa</td>
+                        <td>@vehiculo.marca</td>
+                        <td>@vehiculo.modelo</td>
+                        <td>@vehiculo.color</td>
+                        <td>@vehiculo.observaciones</td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-primary" asp-page="./VerVehiculo" asp-route-id="@vehiculo.id">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a class="btn btn-danger" asp-page="./EliminarVehiculo" asp-route-id="@vehiculo.id">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--Modal para registrar vehiculos-->
+<div class="modal modal-fade" id="formRegistroVehiculo" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registro de Vehiculo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label asp-for="propietarioId">Propietario</label>
+                        <select class="form-control" asp-for="propietarioId" asp-items="@Model.propietarios"></select>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label asp-for="nuevoVehiculo.placa">Placa</label>
+                            <input class="form-control" asp-for="nuevoVehiculo.placa" type="text" placeholder="placa" required>
+                            <span class="text-danger" asp-validation-for="nuevoVehiculo.placa"></span>
+                        </div>
+                        <div class="col form-group">
+                            <label asp-for="nuevoVehiculo.color">Color</label>
+                            <input class="form-control" asp-for="nuevoVehiculo.color" type="text" placeholder="color" required>
+                            <span class="text-danger" asp-validation-for="nuevoVehiculo.color"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-group">
+                            <label asp-for="nuevoVehiculo.marca">Marca</label>
+                            <input class="form-control" asp-for="nuevoVehiculo.marca" type="text" placeholder="marca" required>
+                            <span class="text-danger" asp-validation-for="nuevoVehiculo.marca"></span>
+                        </div>
+                        <div class="col form-group">
+                            <label asp-for="nuevoVehiculo.modelo">Modelo</label>
+                            <input class="form-control" asp-for="nuevoVehiculo.modelo" type="text" placeholder="modelo" required>
+                            <span class="text-danger" asp-validation-for="nuevoVehiculo.modelo"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="tipoVehiculoId">Tipo Vehiculo</label>
+                        <select class="form-control" asp-for="tipoVehiculoId" asp-items="@Model.tipoVehiculos"></select>                            
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="nuevoVehiculo.observaciones">Observaciones</label>
+                        <textarea class="form-control" asp-for="nuevoVehiculo.observaciones" row="5" placeholder="observaciones"></textarea>
+                        <span class="text-danger" asp-validation-for="nuevoVehiculo.observaciones"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-primary" type="submit">Crear Vehiculo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
