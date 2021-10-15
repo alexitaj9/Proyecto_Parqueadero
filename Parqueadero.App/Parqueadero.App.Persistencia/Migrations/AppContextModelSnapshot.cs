@@ -47,6 +47,9 @@ namespace Parqueadero.App.Persistencia.Migrations
 
                     b.HasKey("id");
 
+                    b.HasIndex("identificacion")
+                        .IsUnique();
+
                     b.ToTable("datosPersonas");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("DatosPersona");
@@ -168,6 +171,19 @@ namespace Parqueadero.App.Persistencia.Migrations
                     b.ToTable("Vehiculos");
                 });
 
+            modelBuilder.Entity("Parqueadero.App.Dominio.Administrador", b =>
+                {
+                    b.HasBaseType("Parqueadero.App.Dominio.DatosPersona");
+
+                    b.Property<string>("Cargo")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Dirección")
+                        .HasColumnType("text");
+
+                    b.HasDiscriminator().HasValue("Administrador");
+                });
+
             modelBuilder.Entity("Parqueadero.App.Dominio.Empleado", b =>
                 {
                     b.HasBaseType("Parqueadero.App.Dominio.DatosPersona");
@@ -189,9 +205,6 @@ namespace Parqueadero.App.Persistencia.Migrations
 
                     b.Property<DateTime>("fechaNacimiento")
                         .HasColumnType("datetime");
-
-                    b.HasIndex("identificacion")
-                        .IsUnique();
 
                     b.HasDiscriminator().HasValue("Propietario");
                 });

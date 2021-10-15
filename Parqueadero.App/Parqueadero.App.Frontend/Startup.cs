@@ -1,7 +1,7 @@
-using System.Reflection.Metadata.Ecma335;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +29,17 @@ namespace Parqueadero.App.Frontend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages(
+                options =>
+                {
+                    options.Conventions.AuthorizeFolder("/GestorEmpleados");
+                    options.Conventions.AuthorizeFolder("/GestorPropietarios");
+                    options.Conventions.AuthorizeFolder("/GestorReservas");
+                    options.Conventions.AuthorizeFolder("/GestorVehiculos");
+                    options.Conventions.AllowAnonymousToPage("/Privacy");
+                    options.Conventions.AuthorizePage("/Index");
+                }
+            );
 
             //Relacion con los repositorios
             services.AddSingleton<IRepositorioPropietario>(new RepositorioPropietario(_context));
@@ -39,6 +49,7 @@ namespace Parqueadero.App.Frontend
             services.AddSingleton<IRepositorioReserva>(new RepositorioReserva(_context));
             services.AddSingleton<IRepositorioRolEmpleado>(new RepositorioRolEmpleado(_context));
             services.AddSingleton<IRepositorioVehiculo>(new RepositorioVehiculo(_context));
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,10 +71,16 @@ namespace Parqueadero.App.Frontend
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Conference}/{action=Index}/{id?}"
+                );
                 endpoints.MapRazorPages();
             });
         }

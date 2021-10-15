@@ -15,6 +15,7 @@ namespace Parqueadero.App.Persistencia
         public DbSet<RolEmpleado> RolEmpleados { get; set; }
         public DbSet<TipoVehiculo> TipoVehiculos { get; set; }
         public DbSet<Vehiculo> Vehiculos { get; set; }
+        public DbSet<Administrador> Administradores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
