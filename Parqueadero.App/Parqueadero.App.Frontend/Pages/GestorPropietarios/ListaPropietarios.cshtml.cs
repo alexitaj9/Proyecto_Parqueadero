@@ -38,9 +38,13 @@ namespace Parqueadero.App.Frontend.Pages
         public IActionResult OnPost(Propietario nuevoPropietario) {
             if (ModelState.IsValid) {
                 try {
+                    Console.WriteLine("En proceso");
+
                     //Login
                     repositorioPropietario.addPropietario(nuevoPropietario);
                     
+                    Console.WriteLine("Agregado");
+
                     //Redireccion
                     return RedirectToPage("./ListaPropietarios");
                 }

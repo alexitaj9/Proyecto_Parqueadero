@@ -4,10 +4,17 @@ using Parqueadero.App.Dominio;
 namespace Parqueadero.App.Persistencia{
 
     public interface IRepositorioEspacioParqueadero{
-        IEnumerable<EspacioParqueadero> getAllEspacioParqueadero();
+        //Crear espacio parqueadero
         EspacioParqueadero addEspacioParqueadero(EspacioParqueadero espacioParqueadero);
-        EspacioParqueadero editEspacioParqueadero(EspacioParqueadero espacioParqueadero);
+        
+        //Consultas espacio parqueadero
+        IEnumerable<EspacioParqueadero> getAllEspacioParqueadero();
         EspacioParqueadero getEspacioParqueadero(int Id);
+        
+        //Actualizar espacio parqueadero
+        EspacioParqueadero editEspacioParqueadero(EspacioParqueadero espacioParqueadero);
+
+        //Eliminar espacio parqueadero
         void removeEspacioParqueadero(int Id);
     }
 }

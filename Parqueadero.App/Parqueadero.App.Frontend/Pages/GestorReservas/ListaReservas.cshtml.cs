@@ -76,7 +76,7 @@ namespace Parqueadero.App.Frontend.Pages
             }   
         }
 
-        public IActionResult OnPost(Reserva nuevaReserva, int PropietarioId, int vehiculoId, int espacioParqueaderoId)
+        public IActionResult OnPost(Reserva nuevaReserva, int propietarioId, int vehiculoId, int espacioParqueaderoId)
         {
             if (ModelState.IsValid) {
                 try {
@@ -84,6 +84,9 @@ namespace Parqueadero.App.Frontend.Pages
                     Propietario propietario = repositorioPropietario.getPropietario(propietarioId);
                     Vehiculo vehiculo = repositorioVehiculo.getVehiculo(vehiculoId);
                     EspacioParqueadero espacioParqueaderoSeleccionado = repositorioEspacioParqueadero.getEspacioParqueadero(espacioParqueaderoId);
+
+                    //Asignar
+                    nuevaReserva.fechaReserva = DateTime.Now;
 
                     //Crear reserva
                     repositorioReserva.addReserva(nuevaReserva);
@@ -95,6 +98,12 @@ namespace Parqueadero.App.Frontend.Pages
 
                     //Editar reserva
                     repositorioReserva.editReserva(nuevaReserva);
+
+                    //Asignar
+                    espacioParqueaderoSeleccionado.estado = true;
+
+                    //Editar espacio parqueadero
+                    repositorioEspacioParqueadero.editEspacioParqueadero(espacioParqueaderoSeleccionado);
 
                     //Retorno
                     return RedirectToPage("./ListaReservas");

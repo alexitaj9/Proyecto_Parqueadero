@@ -32,7 +32,7 @@ namespace Parqueadero.App.Persistencia{
 
         public IEnumerable<EspacioParqueadero> getAllEspacioParqueadero()
         {
-            return _contexto.EspacioParqueaderos;
+            return _contexto.EspacioParqueaderos.Where(p => p.estado == false);
         }
 
         public EspacioParqueadero getEspacioParqueadero(int Id)
